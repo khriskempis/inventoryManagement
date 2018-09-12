@@ -11,43 +11,63 @@
 
 	<nav>
 		<ul>
-			<li><a href="#">Shop</a></li>
-			<li><a href="#">Explore</a></li>
 			<li><a href="#" class="logo">Champion Comics</a></li>
-			<li><a href="#">Location</a></li>
-			<li><a href="#">About</a></li>
+			<li><a href="#">Website</a></li>
+			<li><a href="#">OfferUp</a></li>
+			<li><a href="#">Shopify</a></li>
+		</ul>
+		<ul>
+			<li><a href="#">Users</a></li>
 		</ul>
 	</nav>
 
 	<section role="contentinfo" class="content-info container">
 		<div class="nav-links col-3">
 			<ul>
-				<li><a href="#">Action Figures</a></li>
-				<li><a href="#">Statues</a></li>
-				<li><a href="#">Collector's Items</a></li>
-				<li><a href="#">Comics</a></li>
-				<li><a href="#">Legos</a></li>
-				<li><a href="#">Funko Pop</a></li>
-				<li><a href="#">Cards</a>
-					<ul>
-						<li><a href="#">Pokemon</a></li>
-						<li><a href="#">Yugioh</a></li>
-						<li><a href="#">Baseball</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Spinners</a></li>
-				<li><a href="#">Posters</a></li>
-				<li><a href="#">Stickers</a></li>
-				<li><a href="#">Sale Items</a></li>
+				<li><a href="#">Inventory</a></li>
+				<li><a href="#">Orders</a></li>
+				<li><a href="#">Shipping</a></li>
+				<li><a href="#">Vendors</a></li>
 			</ul>
 		</div>
 
 		<div class="inventory-display">
-			<!-- content from API -->
+			<table>
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th>Cost</th>
+						<th>Price</th>
+						<th>Sale</th>
+						<th>Qty</th>
+						<th>Location</th>
+						<th>Status</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody class="js-table-data">
+				<!-- content from API -->
+					<tr>
+						<th>Item 1</th>
+						<td>$5</td>
+						<td>$15</td>
+						<td>$12</td>
+						<td>3</td>
+						<td>La Habra</td>
+						<td>not shipped</td>
+						<td><button class="js-update">update</button></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 
-
 	</section>
+
+<div class="js-next-prev">
+	<button class="js-prev">< prev</button>
+	<button class="js-next">next ></button>
+</div>
+
 
 <script type="text/javascript" src="index.js"></script>
 </body>

@@ -1,3 +1,95 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+
 a {
-	color: pink;
+	text-decoration: none;
+}
+
+/* === NAVIGATION BAR === */
+
+nav ul li {
+	display: inline-block;
+	margin: 0 1.5rem;
+}
+
+nav {
+	display: flex; 
+	justify-content: space-between;
+	width: 100%;
+	margin: 3rem auto; 
+}
+
+/* === CONTENT DISPLAY === */
+
+.content-info {
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav-links {
+	border: 1px solid black;
+	margin-left: 1rem;
+}
+
+.nav-links ul li {
+	padding: 1rem;
+}
+
+.inventory-display {
+	margin-left: 1.5rem;
+}
+
+/* === TABLE DATA === */
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: 3px solid grey; 
+}
+
+thead th:nth-child(0),
+thead th:nth-child(3) {
+	width: 10%;
+}
+
+thead th:nth-child(2),
+thead th:nth-child(4),
+thead th:nth-child(5),  {
+  width: 5%;
+}
+
+th, td {
+  padding: 20px;
+}
+
+tbody td {
+	text-align: center;
+}
+
+.js-update-button {
+	width: 100%;
+}
+
+.js-next-prev {
+	display: flex;
+	justify-content: flex-end;
+	margin: 1rem 3rem;
+}
+
+.js-next, 
+.js-prev {
+	padding: 0.5rem;
+	margin: 0 1rem;
+	font-size: 18px;
 }
