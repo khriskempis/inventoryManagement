@@ -74,13 +74,15 @@ form {
 	flex-grow: 1
 }
 
-.submit-button {
+/*.submit-button {
 	position: absolute;
 	right: 5rem;
 }
-
-.submit-button button {
+*/
+.js-submit-button {
 	padding: 1rem;
+	height: 3rem;
+	margin-top: 6rem;
 }
 /* === CONTENT DISPLAY === */
 
