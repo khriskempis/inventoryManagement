@@ -20,7 +20,54 @@
 	</ul>
 </nav>
 
+<section class="content-info">
 
+	<div class="nav-links col-3">
+		<ul>
+			<li><a href="index.html">Inventory</a></li>
+			<li><a href="#">Orders</a></li>
+			<li><a href="#">Shipping</a></li>
+			<li><a href="#">Vendors</a></li>
+		</ul>
+	</div>
+
+
+	<form class="js-add-item">
+		<div class="form-text">
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name">
+
+			<label for="description">Description</label>
+			<textarea cols="18" rows="3" id="description"></textarea>
+		
+			<label for="category">Category</label>
+			<input type="text" name="category" id="category">
+
+			<label for="status">Status</label>
+			<input type="text" name="status" id="status">
+		</div>
+
+		<div class="form-numbers">
+			<label for="quantity">Quantity</label>
+			<select id="quantity">
+				<option >1</option>
+			</select>
+
+			<label for="price">Price</label>
+			<input type="number" name="price" id="price">
+
+			<label for="sale">Sale</label>
+			<input type="number" name="sale" id="sale">
+
+			<label for="image">Image Url</label>
+			<input type="text" name="image" id="image">
+		</div>
+	</form>
+</section>
+
+<div class="submit-button">
+	<button type="submit" class="js-submit-button">Add Item</button>
+</div>
 
 
 

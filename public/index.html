@@ -9,59 +9,53 @@
 </head>
 <body>
 
-	<nav>
+<nav>
+	<ul>
+		<li><a href="#" class="logo">Champion Comics</a></li>
+		<li><a href="#">Website</a></li>
+		<li><a href="#">OfferUp</a></li>
+		<li><a href="#">Shopify</a></li>
+	</ul>
+	<ul>
+		<li><a href="#">Users</a></li>
+	</ul>
+</nav>
+
+<div class="add-button">
+	<a href="items/item-form.html" type="button" class="js-add-button">+ Add Item</a>
+</div>
+
+<section role="contentinfo" class="content-info container">
+	<div class="nav-links col-3">
 		<ul>
-			<li><a href="#" class="logo">Champion Comics</a></li>
-			<li><a href="#">Website</a></li>
-			<li><a href="#">OfferUp</a></li>
-			<li><a href="#">Shopify</a></li>
+			<li><a href="index.html">Inventory</a></li>
+			<li><a href="#">Orders</a></li>
+			<li><a href="#">Shipping</a></li>
+			<li><a href="#">Vendors</a></li>
 		</ul>
-		<ul>
-			<li><a href="#">Users</a></li>
-		</ul>
-	</nav>
+	</div>
 
-	<section role="contentinfo" class="content-info container">
-		<div class="nav-links col-3">
-			<ul>
-				<li><a href="#">Inventory</a></li>
-				<li><a href="#">Orders</a></li>
-				<li><a href="#">Shipping</a></li>
-				<li><a href="#">Vendors</a></li>
-			</ul>
-		</div>
+	<div class="inventory-display">
+		<table>
+			<thead>
+				<tr>
+					<th>Item</th>
+					<th>Cost</th>
+					<th>Price</th>
+					<th>Sale</th>
+					<th>Qty</th>
+					<th>Location</th>
+					<th>Status</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody class="js-table-data">
+			<!-- content from API -->
+			</tbody>
+		</table>
+	</div>
 
-		<div class="inventory-display">
-			<table>
-				<thead>
-					<tr>
-						<th>Item</th>
-						<th>Cost</th>
-						<th>Price</th>
-						<th>Sale</th>
-						<th>Qty</th>
-						<th>Location</th>
-						<th>Status</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody class="js-table-data">
-				<!-- content from API -->
-					<tr>
-						<th>Item 1</th>
-						<td>$5</td>
-						<td>$15</td>
-						<td>$12</td>
-						<td>3</td>
-						<td>La Habra</td>
-						<td>not shipped</td>
-						<td><button class="js-update">update</button></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-
-	</section>
+</section>
 
 <div class="js-next-prev">
 	<button class="js-prev">< prev</button>

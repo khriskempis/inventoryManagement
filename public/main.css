@@ -29,6 +29,59 @@ nav {
 	margin: 3rem auto; 
 }
 
+.add-button {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 3rem;
+}
+
+.js-add-button {
+	padding: 0.5rem;
+	font-size: 1rem;
+	border: 1px solid grey;
+}
+
+/* === ITEM FORM === */
+
+input,
+textarea,
+select {
+	display: block;
+}
+
+input[type=number] {
+	width: 50px;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap; 
+	width: 100%;
+}
+
+.form-text,
+.form-numbers {
+	margin: 1rem;
+	border: 1px solid purple;
+	padding: 1rem; 
+}
+
+.form-text {
+	flex-grow: 3;
+}
+
+.form-numbers {
+	flex-grow: 1
+}
+
+.submit-button {
+	position: absolute;
+	right: 5rem;
+}
+
+.submit-button button {
+	padding: 1rem;
+}
 /* === CONTENT DISPLAY === */
 
 .content-info {
