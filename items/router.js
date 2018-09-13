@@ -11,7 +11,7 @@ const jsonParser = bodyParser.json();
 
 // CREATE a new item 
 router.post('/', jsonParser, (req,res) => {
-	const requiredFields = ["name", "description", "qty", "cost", "price", "image_url"];
+	const requiredFields = ["name", "description", "qty", "cost", "price", "category", "status", "image_url"];
 
 	Item.create({
 		name: req.body.name,
@@ -22,6 +22,8 @@ router.post('/', jsonParser, (req,res) => {
 			regular: req.body.price.regular,
 			sale: req.body.price.sale
 		},
+		category: req.body.category,
+		status: req.body.status,
 		image_url: {url: req.body.image_url.url}
 	})
 	.then(item => res.status(201).json(item.serialize()))

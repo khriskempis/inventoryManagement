@@ -1,0 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 75rem;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.container:before, 
+.container:after {
+	display: table;
+	content: '';
+}
+
+.content-info {
+	padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+	margin-top: 10px;
+}
+
+
+/* === COLUMN WIDTHS === */
+.col-3 {
+	width: 22.5%;
+}
+
+.col-4 {
+	width: 33.33%;
+}	
+
+.col-5 {
+	width: 41.66%;
+}
+
+.col-12 {
+	width: 100%;
+}
