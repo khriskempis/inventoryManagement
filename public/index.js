@@ -1,3 +1,5 @@
+const INVENTORY_ENDPOINT = "http://localhost:8080/items";
+
 MOCK_ITEM_INFO = []
 
 function populateMockData(num){
@@ -21,7 +23,19 @@ function populateMockData(num){
 
 // get data from API
 function getItems(callbackFn) {
-	setTimeout(function(){ callbackFn(MOCK_ITEM_INFO)}, 100);
+	// setTimeout(function(){ callbackFn(MOCK_ITEM_INFO)}, 100);
+
+	$.ajax({
+		method: "GET",
+		url: INVENTORY_ENDPOINT,
+		dataType: "json"
+	})
+	.done(function(data){
+		callbackFn(data);
+	})
+	.fail(function(err){
+		console.log(err);
+	});
 };
 
 // generate individual html for each item
@@ -33,7 +47,7 @@ function generateItemHtml(item, index) {
 						<td>$${item.price.sale}</td>
 						<td>${item.qty}</td>
 						<td>La Habra</td>
-						<td>not shipped</td>
+						<td>${item.status}</td>
 						<td><button class="js-update-button">update</button></td>
 					</tr>`
 };

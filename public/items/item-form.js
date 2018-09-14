@@ -4,7 +4,6 @@ const ITEMS_ENDPOINT = "http://localhost:8080/items";
 // POST ITEM 
 
 function postItemToApi(newItem, callbackFn){
-	console.log(newItem)
 
 	$.ajax({
 		method: "POST",
