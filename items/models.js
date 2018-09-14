@@ -12,10 +12,10 @@ const ItemSchema = Schema({
 		regular: { type: Number, required: true },
 		sale: Number
 	},
-	category: [{type: String}],
+	category: [String],
 	status: String,
 	image_url: {
-		url: { type: String, required: true }
+		url: { type: String }
 	}
 });
 

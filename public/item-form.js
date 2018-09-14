@@ -1,4 +1,4 @@
-const ITEMS_ENDPOINT = "localhost:8080/items";
+const ITEMS_ENDPOINT = "http://localhost:8080/items";
 
 
 // POST ITEM 
@@ -9,7 +9,8 @@ function postItemToApi(newItem, callbackFn){
 	$.ajax({
 		method: "POST",
 		url: ITEMS_ENDPOINT,
-		data: newItem,
+		data: JSON.stringify(newItem),
+		contentType: "application/json"
 	})
 	.done(function(item){
 		callbackFn(item);
@@ -44,7 +45,7 @@ function displayNewItem(item){
 						<td><button class="js-update-button">update</button></td>
 					</tr>`
 
-	$('.results-display').html(tableHtmlStringl)
+	$('.results-display').html(tableHtmlString)
 }
 
 
