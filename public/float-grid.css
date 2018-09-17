@@ -6,6 +6,7 @@
 	max-width: 75rem;
 	padding: 0 20px;
 	margin: 0 auto;
+	border-radius: 0.28571429rem
 }
 
 .container:before, 

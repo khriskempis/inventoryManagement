@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Champion Comics and Toys</title>
+	<link rel="stylesheet" type="text/css" href="../float-grid.css">
+	<link rel="stylesheet" type="text/css" href="../main.css">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<nav>
+	<ul>
+		<li><a href="#" class="logo">Champion Portal</a></li>
+		<li><a href="#">Website</a></li>
+		<li><a href="#">OfferUp</a></li>
+		<li><a href="#">Shopify</a></li>
+	</ul>
+	<ul>
+		<li><a href="#">Users</a></li>
+	</ul>
+</nav>
+
+<div class="add-button">
+	<a href="../items/item-form.html" type="button" class="js-add-button">+ Add Item</a>
+</div>
+
+<section role="contentinfo" class="content-info container">
+	<div class="nav-links col-3">
+		<ul>
+			<li><a href="index.html">Inventory</a></li>
+			<li><a href="#">Orders</a></li>
+			<li><a href="#">Shipping</a></li>
+			<li><a href="#">Vendors</a></li>
+		</ul>
+	</div>
+
+	<div class="inventory-display">
+		<table>
+			<thead>
+				<tr>
+					<th>Item</th>
+					<th>Cost</th>
+					<th>Price</th>
+					<th>Sale</th>
+					<th>Qty</th>
+					<th>Location</th>
+					<th>Status</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody class="js-table-data">
+			<!-- content from API -->
+			</tbody>
+		</table>
+	</div>
+
+</section>
+
+<div class="js-next-prev">
+	<button class="js-prev">< prev</button>
+	<button class="js-next">next ></button>
+</div>
+
+
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

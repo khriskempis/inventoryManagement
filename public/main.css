@@ -5,6 +5,7 @@
 
 body {
 	box-sizing: border-box;
+	font-family: 'Rubik', sans-serif;
 }
 
 ul {
@@ -40,6 +41,83 @@ nav {
 	font-size: 1rem;
 	border: 1px solid grey;
 }
+
+/* === SIGN IN PAGE === */
+
+.sign-in input,
+.sign-in button,
+.sign-in,
+.sign-up input,
+.sign-up button,
+.sign-up {
+	border-radius: 0.28571429rem;
+}
+
+.sign-up,
+.sign-in {
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid green;
+	padding: 1rem;
+	margin-top: 2rem;
+}
+
+.sign-up {
+	margin-top: 8rem;
+}
+
+.sign-up input,
+.sign-up button,
+.sign-in input,
+.sign-in button {
+	width: 100%;
+	height: 2rem;
+	font-size: 1rem;
+	padding: 0.5rem;
+	margin: 0.5rem;
+}
+
+.sign-up form,
+.sign-in form {
+	text-align: center;
+}
+
+.sign-up button,
+.sign-in button {
+font-weight: bold;
+}
+
+.new-user-signup {
+	border: 1px solid green;
+	margin:-top: 2rem;
+	padding: 1rem;
+	width: 50%;
+}
+
+.sign-up label,
+.sign-in label {
+	display: inline-block;
+	margin: 0 0.5rem;
+}
+
+/* === SIGN UP PAGE === */
+
+.welcome-message,
+.new-user-info {
+	width: 40%;
+	border: 1px solid purple;
+	text-align: center;
+	line-height: 1.5rem;
+	padding: 5rem 4rem;
+	margin-top: 8rem;
+}
+
+.welcome-message {
+	margin-top: 4rem;
+	width: 50%;
+	padding: 2rem;
+}
+
 
 /* === ITEM FORM === */
 
