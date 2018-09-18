@@ -47,9 +47,6 @@ describe('users endpoint', function() {
             firstName,
             lastName
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -71,9 +68,6 @@ describe('users endpoint', function() {
             firstName,
             lastName
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -96,9 +90,6 @@ describe('users endpoint', function() {
             firstName,
             lastName
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -123,9 +114,6 @@ describe('users endpoint', function() {
             firstName,
             lastName
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -150,9 +138,6 @@ describe('users endpoint', function() {
             firstName: 1234,
             lastName
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -177,9 +162,6 @@ describe('users endpoint', function() {
             firstName,
             lastName: 1234
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -204,9 +186,6 @@ describe('users endpoint', function() {
             firstName,
             lastName
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -231,9 +210,6 @@ describe('users endpoint', function() {
             firstName,
             lastName
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -258,9 +234,6 @@ describe('users endpoint', function() {
             firstName,
             lastName
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -285,9 +258,6 @@ describe('users endpoint', function() {
             firstName,
             lastName
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -312,9 +282,6 @@ describe('users endpoint', function() {
             firstName,
             lastName
           })
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
-          )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
               throw err;
@@ -345,9 +312,6 @@ describe('users endpoint', function() {
               firstName,
               lastName
             })
-          )
-          .then(() =>
-            expect.fail(null, null, 'Request should not succeed')
           )
           .catch(err => {
             if (err instanceof chai.AssertionError) {
@@ -433,7 +397,7 @@ describe('users endpoint', function() {
 
     describe('GET', function () {
       it('Should return an empty array initially', function () {
-        return chai.request(app).get('/api/users').then(res => {
+        return chai.request(app).get('/users').then(res => {
           expect(res).to.have.status(200);
           expect(res.body).to.be.an('array');
           expect(res.body).to.have.length(0);
