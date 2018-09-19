@@ -36,7 +36,7 @@ app.use(function(req, res, next) {
 // passport.use(jwtStrategy);
 
 app.use('/items', itemsRouter);
-// app.use('/users', usersRouter);
+app.use('/users', usersRouter);
 // app.use('/auth', authRouter);
 
 // const jwtAuth = passport.authenticate('jwt', { session: false });
