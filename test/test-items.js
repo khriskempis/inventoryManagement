@@ -23,6 +23,8 @@ function generateItem() {
 			regular: faker.random.number(),
 			sale: faker.random.number()
 		},
+		category: ["action figure", "godzilla"],
+		status: "in stock",
 		image_url: {url: faker.image.imageUrl()}
 	}
 }
@@ -62,8 +64,9 @@ describe('/items endpoint', function () {
 				.then(res => {
 					expect(res).to.have.status(201);
 					expect(res.body).to.be.an('object');
+					console.log(res.body);
 					expect(res.body).to.have.keys(
-						'_id','name', 'description', 'qty', 'cost', 'price', 'image_url');
+						'_id','name', 'description', 'qty', 'cost', 'price', 'category', 'status', 'image_url');
 					expect(res.body.name).to.equal(newItem.name);
 					expect(res.body.description).to.equal(newItem.description);
 					expect(res.body.qty).to.equal(newItem.qty);

@@ -17,6 +17,7 @@ const { PORT, DATABASE_URL } = require('./config');
 const app = express();
 
 app.use(express.static('public'));
+app.use(express.static('public/main'));
 
 app.use(morgan('common')); 
 
