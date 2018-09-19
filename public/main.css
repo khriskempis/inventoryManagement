@@ -89,7 +89,7 @@ font-weight: bold;
 
 .new-user-signup {
 	border: 1px solid green;
-	margin:-top: 2rem;
+	margin-top: 2rem;
 	padding: 1rem;
 	width: 50%;
 }
@@ -116,6 +116,16 @@ font-weight: bold;
 	margin-top: 4rem;
 	width: 50%;
 	padding: 2rem;
+}
+
+.name-section {
+	display: flex;
+	width: 100%;
+}
+
+.name-section input {
+	display: block;
+	width: 50%;
 }
 
 
