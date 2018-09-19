@@ -12,8 +12,10 @@ const ItemSchema = Schema({
 		regular: { type: Number, required: true },
 		sale: Number
 	},
+	category: [String],
+	status: String,
 	image_url: {
-		url: { type: String, required: true }
+		url: { type: String }
 	}
 });
 
@@ -28,6 +30,8 @@ ItemSchema.methods.serialize = function() {
 			regular: this.price.regular,
 			sale: this.price.sale
 		},
+		category: this.category,
+		status: this.status,
 		image_url: { 
 			url: this.image_url.url
 		}
