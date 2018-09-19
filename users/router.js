@@ -102,11 +102,11 @@ router.post('/', jsonParser, (req, res) => {
 			return User.hashPassword(password);
 		})
 		.then(hash => {
-			return User.create({
+				return User.create({
 				username, 
 				password: hash,
-				firstname,
-				lastname
+				firstName,
+				lastName
 			});
 		})
 		.then(user => {
@@ -125,6 +125,12 @@ router.get('/', (req, res) => {
     .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 
+});
+
+router.get('/', (req, res) => {
+  return User.find()
+    .then(users => res.json(users.map(user => user.serialize())))
+    .catch(err => res.status(500).json({message: 'Internal server error'}));
 });
 
 
