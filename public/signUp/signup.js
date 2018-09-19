@@ -5,19 +5,27 @@ function createUser(newUser, callbackFn){
 		method: "POST",
 		url: USERS_ENDPOINT,
 		data: JSON.stringify(newUser),
-		dataType: "json"
+		contentType: "application/json"
 	})
 	.done(data => {
 		callbackFn(data);
 	})
-	.fail(err => {
-		console.log(err)
+	.fail((data, err) => {
+		console.log(data)
+		errorMessage(data.responseJSON);
 	})
+};
+
+function errorMessage(responseJSON){
+
+	const message = `${responseJSON.location} ${responseJSON.message}`
+
+	$('.new-user-info').html(message);
 };
 
 
 function renderMessage(data){
-	const message = `<p>Welcome ${data.firstName}! </p>
+	const message = `<p>Welcome ${data.firstName || data.username}! </p>
 									 <p>You can now <a href="../index.html">sign in</a> to your account.</p>`
 
 	$('.new-user-info').html(message)
