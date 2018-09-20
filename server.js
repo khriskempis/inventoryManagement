@@ -7,7 +7,7 @@ const passport = require('passport');
 const { router: itemsRouter } = require('./items');
 const { router: usersRouter } = require('./users');
 
-// const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
+const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
 mongoose.Promise = global.Promise; 
 
@@ -32,14 +32,16 @@ app.use(function(req, res, next) {
 	next(); 
 });
 
-// passport.use(localStrategy); 
-// passport.use(jwtStrategy);
+passport.use(localStrategy); 
+passport.use(jwtStrategy);
 
-app.use('/items', itemsRouter);
+const jwtAuth = passport.authenticate('jwt', { session: false });
+
+
+app.use('/items', jwtAuth, itemsRouter);
 app.use('/users', usersRouter);
-// app.use('/auth', authRouter);
+app.use('/auth', authRouter);
 
-// const jwtAuth = passport.authenticate('jwt', { session: false });
 
 app.use('*', (req, res) => {
 	return res.status(404).json({ message: "Not Found"});
