@@ -1,4 +1,4 @@
-const INVENTORY_ENDPOINT = "http://localhost:8080/items";
+const INVENTORY_ENDPOINT = "http://localhost:8080/items/";
 
 MOCK_ITEM_INFO = []
 
@@ -24,11 +24,16 @@ function populateMockData(num){
 // get data from API
 function getItems(callbackFn) {
 	// setTimeout(function(){ callbackFn(MOCK_ITEM_INFO)}, 100);
-
 	$.ajax({
 		method: "GET",
 		url: INVENTORY_ENDPOINT,
-		dataType: "json"
+		dataType: "json",
+		beforeSend: function(xhr){
+			xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"))
+		}
+		// headers: {
+		// 	"Authorization": `Bearer ${localStorage.getItem("token")}`
+		// }
 	})
 	.done(function(data){
 		callbackFn(data);

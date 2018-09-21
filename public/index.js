@@ -1,16 +1,19 @@
-const USERS_ENDPOINT = "http://localhost:8080/users"
+const USERS_ENDPOINT = "http://localhost:8080/auth/login";
+let loggedIn = false; 
 
 
 function loginUser(userInfo) {
 	$.ajax({
 		method: "POST",
-		data: userInfo,
+		url: USERS_ENDPOINT,
+		data: JSON.stringify(userInfo),
 		contentType: "application/json"
 	})
 	.done(token => {
-		localStorage.setItem("token", token);
-		console.log(localStorage);
-		displayMessage("You have successfully Logged In")
+		localStorage.setItem("token", token.authToken);
+		loggedIn = true;
+		displayMessage("You have successfully Logged In");
+		redirectToMain();
 	})
 	.fail(err => {
 		console.log(err);
@@ -23,6 +26,12 @@ function displayMessage(message){
 	console.log(message); 
 };
 
+function redirectToMain(){
+		if(loggedIn){
+			window.location.href = "main/index.html"
+		}
+}
+
 
 function handleSubmit(){
 
@@ -32,8 +41,8 @@ function handleSubmit(){
 		event.preventDefault();
 
 		const userCredentials = {
-			username: signInForm.find('input[name="username"]'),
-			password: signInForm.find('input[name="password"]')
+			username: signInForm.find('input[name="username"]').val(),
+			password: signInForm.find('input[name="password"]').val()
 		}
 
 		loginUser(userCredentials)
