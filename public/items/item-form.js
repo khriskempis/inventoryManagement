@@ -50,7 +50,11 @@ function displayNewItem(item){
 	$('.results-display').html(tableHtmlString)
 }
 
-
+function handleSignOut(){
+	$('.js-sign-out').click(function(){
+		localStorage.removeItem("token");
+	})
+};
 
 function handleSubmit(){
 
@@ -77,7 +81,12 @@ function handleSubmit(){
 	});
 }
 
-$(handleSubmit())
+function init(){
+	$(handleSignOut());
+	$(handleSubmit());
+}
+
+$(init())
 
 
 

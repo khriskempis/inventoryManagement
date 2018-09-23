@@ -220,9 +220,13 @@ tbody td {
 	text-align: center;
 }
 
-.js-update-button {
-	width: 100%;
+.edit-buttons {
+	display: flex;
 }
+
+.js-view-button,
+.js-delete-button {
+	width: 100%}
 
 .js-next-prev {
 	display: flex;
@@ -235,4 +239,23 @@ tbody td {
 	padding: 0.5rem;
 	margin: 0 1rem;
 	font-size: 18px;
+}
+
+/* === ITEM DISPLAY PAGE === */
+
+.item-display {
+	display: flex; 
+}
+
+.item-display img {
+	width: 100%;
+}
+
+.item-display table {
+	table-layout: unset;
+	border: none;
+}
+
+.quantity-status{
+	display: flex;
 }

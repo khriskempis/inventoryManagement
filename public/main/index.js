@@ -1,26 +1,5 @@
 const INVENTORY_ENDPOINT = "http://localhost:8080/items/";
 
-MOCK_ITEM_INFO = []
-
-function populateMockData(num){
-	for(let i=1; i<=num; i++){
-		let object = {
-			"id": `${i}`,
-			"name": `Item name ${i}`,
-			"description": `item description of number ${i}`,
-			"qty": i/1,
-			"cost": i*3,
-			"price": {
-				"regular": i*6,
-				"sale": i*3
-			},
-			"image_url": "https://image.com/image",
-			"category": ["Action Figure", "Godzilla"]
-		}
-		MOCK_ITEM_INFO.push(object)
-	}
-}
-
 // get data from API
 function getItems(callbackFn) {
 	// setTimeout(function(){ callbackFn(MOCK_ITEM_INFO)}, 100);
@@ -31,15 +10,32 @@ function getItems(callbackFn) {
 		beforeSend: function(xhr){
 			xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"))
 		}
-		// headers: {
-		// 	"Authorization": `Bearer ${localStorage.getItem("token")}`
-		// }
 	})
 	.done(function(data){
 		callbackFn(data);
 	})
 	.fail(function(err){
 		console.log(err);
+	});
+};
+
+function getItemInfo(itemId){
+	// console.log(itemId);
+	// console.log(INVENTORY_ENDPOINT + itemId)
+
+	$.ajax({
+		method: "GET",
+		url: INVENTORY_ENDPOINT + itemId,
+		contentType: "application/json",
+		beforeSend: function(xhr){
+			xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"))
+		}
+	})
+	.done(data => {
+		console.log(data);
+	})
+	.fail(err =>{
+		console.log(err); 
 	});
 };
 
@@ -53,7 +49,14 @@ function generateItemHtml(item, index) {
 						<td>${item.qty}</td>
 						<td>La Habra</td>
 						<td>${item.status}</td>
-						<td><button class="js-update-button">update</button></td>
+						<td class="edit-buttons" item-id="${item._id}">
+							<button class="js-view-button">
+								<img src="../source-files/svg/pencil.svg">
+							</button>
+							<button class="js-delete-button">
+								<img src="../source-files/svg/trash.svg">
+							</button>
+						</td>
 					</tr>`
 };
 
@@ -70,8 +73,35 @@ function renderItemsHtml(){
 	let itemsHtml =	getItems(generateAndDisplayArrayOfItems);
 };
 
+
+// Click Events
+
+function handleViewButton() {
+	const viewButton = $('.inventory-display').find('.js-table-data');
+	viewButton.on("click", ".js-view-button", function(event){
+		event.preventDefault();
+		let itemId = $(this).parent().attr("item-id");
+		localStorage.setItem("itemId", `${itemId}`)
+		getItemInfo(itemId)
+		window.location.href = "../itemDisplay/index.html"; 
+	});
+}
+
+function handleDeleteButton() {
+	$('.js-delete-button').click(function(){
+		console.log('clicked'); 
+	})
+}
+
+function handleSignOut(){
+	$('.js-sign-out').click(function(){
+		localStorage.removeItem("token");
+	})
+};
+
 function init(){
-	$(populateMockData(10))
+	$(handleViewButton())
+	$(handleSignOut());
 	$(renderItemsHtml());
 }
 
