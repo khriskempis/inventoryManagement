@@ -19,30 +19,10 @@ function getItems(callbackFn) {
 	});
 };
 
-function getItemInfo(itemId){
-	// console.log(itemId);
-	// console.log(INVENTORY_ENDPOINT + itemId)
-
-	$.ajax({
-		method: "GET",
-		url: INVENTORY_ENDPOINT + itemId,
-		contentType: "application/json",
-		beforeSend: function(xhr){
-			xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("token"))
-		}
-	})
-	.done(data => {
-		console.log(data);
-	})
-	.fail(err =>{
-		console.log(err); 
-	});
-};
-
 // generate individual html for each item
 function generateItemHtml(item, index) {
 	return `<tr>
-						<th>${item.name}</th>
+						<th item-name="${item.name}">${item.name}</th>
 						<td>${item.cost}</td>
 						<td>$${item.price.regular}</td>
 						<td>$${item.price.sale}</td>
@@ -68,6 +48,11 @@ function generateAndDisplayArrayOfItems(data){
 	$('.js-table-data').html(itemsHtml);
 };
 
+function renderConfirmDelete(itemName){
+	$('.confirm-delete').removeClass('hidden');
+	$('.js-delete-message').text(`Would you like to Delete the item ${itemName}?`)
+}
+
 // render Items to client 
 function renderItemsHtml(){
 	let itemsHtml =	getItems(generateAndDisplayArrayOfItems);
@@ -79,17 +64,20 @@ function renderItemsHtml(){
 function handleViewButton() {
 	const viewButton = $('.inventory-display').find('.js-table-data');
 	viewButton.on("click", ".js-view-button", function(event){
-		event.preventDefault();
 		let itemId = $(this).parent().attr("item-id");
+		// console.log(itemId);
 		localStorage.setItem("itemId", `${itemId}`)
-		getItemInfo(itemId)
 		window.location.href = "../itemDisplay/index.html"; 
 	});
 }
 
 function handleDeleteButton() {
-	$('.js-delete-button').click(function(){
-		console.log('clicked'); 
+	const deleteButton = $('.inventory-display').find('.js-table-data');
+	deleteButton.on('click', '.js-delete-button', function(event){
+		let deleteItemId = $(this).parent().attr("item-id");
+		let deleteItemName = $(this).parent().siblings("th").attr("item-name");
+		renderConfirmDelete(deleteItemName);
+		localStorage.setItem("deleteItemId", `${deleteItemId}`);
 	})
 }
 
@@ -100,7 +88,8 @@ function handleSignOut(){
 };
 
 function init(){
-	$(handleViewButton())
+	$(handleDeleteButton());
+	$(handleViewButton());
 	$(handleSignOut());
 	$(renderItemsHtml());
 }
