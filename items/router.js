@@ -57,7 +57,7 @@ router.put('/:id', jsonParser, (req, res) => {
 
 	//find fields to update in req.body
 	const updated = {};
-	const updateableFields = ['name', 'description', 'qty', 'cost', 'price', 'image_url'];
+	const updateableFields = ['name', 'description', 'category', 'status', 'qty', 'cost','price', 'image_url'];
 
 	updateableFields.forEach(field => {
 		if (field in req.body) {

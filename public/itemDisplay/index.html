@@ -35,40 +35,67 @@
 	<div class="item-display">
 		<div class="col-4">
 			<img src="../source-files/img/alien.PNG">
-			<h3>Description</h3>
+			<h5>Description</h5>
 			<p class="item-description">
 				This is an Alien figurine, 1st edition. 
 			</p>
 		</div>
 		<div class="price-display">
-			<h3>Category</h3>
+			<h5>Category</h5>
 			<p>Action Figure</p>
 
-			<table>
-				<tr>
-					<th>Cost</th>
-					<th>Price</th>
-					<th>Sale</th>
-				</tr>
-				<tr>
-					<td>$8</td>
-					<td>$12</td>
-					<td>$11</td>
-				</tr>
-			</table>
+			<h5>Status</h5>
+			<p>in Stock</p>
 
-			<div class="quantity-status">
-				<h3>Quantity</h3>
-				<p>1</p>
-				<h3>Status</h3>
-				<p>in Stock</p>
-			</div>
-			<div>
-				<h3>Location</h3>
-				<p>La Habra</p>
-			</div>
+			<h5>Location</h5>
+			<p>La Habra</p>
+
+			<h5>Quantity</h5>
+			<p>1</p>
+
+			<h5>Cost</h5>
+			<p>$8</p>
+
+			<h5>Price</h5>
+			<p>$18</p>
+
+			<h5>Sale</h5>
+			<p>$14</p>
+
+
 		</div>
 	</div>
+
+	<div>
+		<button class="js-inventory-button">Back To Inventory</button>
+		<button class="js-update-item">Update Item</button>
+	</div>
+
+	<div class="form-pop-up hidden">
+		<form class="js-form-container" id="form-container">
+
+			<p>Please Type the field you would like to update alond with the new updated value</p>
+		
+			<label for="field">Field</label>
+			<input type="text" name="field" id="field">
+
+			<label for="updated-value">Value</label>
+			<input type="text" name="updated-value" id="updated-value">
+
+			<button class="js-add-updated-item">add</button>
+		</form>
+
+		<div class="updated-items">
+			<h5>Fields to be Updated</h5>
+			<!-- new items to be updated -->
+		</div>
+
+		<button class="js-update-fields" type="submit">UPDATE FIELDS</button>
+		<button class="update-fields-cancel">Cancel</button>
+
+
+	</div>
+
 
 </section>
 

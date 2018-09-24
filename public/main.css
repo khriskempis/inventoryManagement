@@ -245,6 +245,7 @@ tbody td {
 
 .item-display {
 	display: flex; 
+	justify-content: space-around;
 }
 
 .item-display img {
@@ -256,6 +257,53 @@ tbody td {
 	border: none;
 }
 
-.quantity-status{
-	display: flex;
+.price-display {
+	width: 33%;
 }
+
+.item-display h3 {
+	margin: 1rem 0; 
+
+}
+
+.price-display h5 {
+	display: inline-block;
+	margin-top: 1rem;
+}
+
+
+/* === FORM POP UP === */
+
+.hidden {
+	display: none;
+}
+
+.form-pop-up {
+	position: absolute;
+	z-index: 3; 
+	right: 1rem;
+	top: 7rem;
+	width: 25%;
+	background-color: #fff;
+	font-size: 0.9rem;
+}
+
+#form-container {
+	display: block;
+	background-color: #fff;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
