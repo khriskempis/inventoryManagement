@@ -50,16 +50,12 @@ nav a {
 }
 
 /* === STATUS BAR === */
-.add-button {
-	display: flex;
-	justify-content: flex-end;
-	background-color: var(--blue-bg-color);
-}
 
 .js-add-button {
 	padding: 1rem;
 	font-size: 1rem;
 	border: 1px solid grey;
+	background-color: var(--blue-bg-color);
 }
 
 .status-bar {
@@ -352,6 +348,18 @@ tbody td {
 .price-display h5 {
 	display: inline-block;
 	margin-top: 1rem;
+}
+.price-display p {
+	font-size: 1.3rem;
+}
+
+.message-board {
+	width: 30%;
+}
+
+.message-board li {
+	list-style: inside;
+	font-size: 0.8rem;
 }
 
 

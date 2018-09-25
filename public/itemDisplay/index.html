@@ -22,18 +22,17 @@
 </nav>
 
 <div class="status-bar">
-	<div class="add-button">
-		<a href="../items/item-form.html" type="button" class="js-add-button">+ Add Item</a>
+	<div>
+		<button class="js-inventory-button">Back To Inventory</button>
 	</div>
 
 	<div class="status-message invisible">
 
 	</div>
 
-	<div class="confirm-delete invisible">
-		<!-- <p class="js-delete-message"> </p> -->
-		<button class="confirm-delete-button"></button>
-		<button class="cancel-delete-button">Cancel</button>
+	<div class="update-button">
+		<button class="js-update-item">Update Item</button>
+
 	</div> 
 </div>
 
@@ -83,9 +82,17 @@
 		</div>
 	</div>
 
-	<div>
-		<button class="js-inventory-button">Back To Inventory</button>
-		<button class="js-update-item">Update Item</button>
+	<div class="message-board">
+		<p>Here you can view each individual Item</p>
+		<p>You may also update this Item by clicking the Update Item Button</p>
+
+		<ul>
+			<li>To Update, simple type the field you would like to update.</li>
+			<li>Then, the new value.</li>
+			<li>Click add and the updated field will included in the update.</li>
+			<li>You can update all fields by just adding the information.</li>
+			<li>When you're done adding fields to the update, click the update items button and your changes will be displayed.</li>
+	</ul>
 	</div>
 
 	<div class="form-pop-up hidden">
