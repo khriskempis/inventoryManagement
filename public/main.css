@@ -6,6 +6,7 @@
 body {
 	box-sizing: border-box;
 	font-family: 'Rubik', sans-serif;
+	background-color: var(--off-white-bg-color)
 }
 
 ul {
@@ -14,6 +15,16 @@ ul {
 
 a {
 	text-decoration: none;
+	color: #fff;
+}
+
+:root {
+	--dark-blue-bg-color: #384259;
+	--med-blue-bg-color: #dbe2ef;
+	--blue-bg-color: #3f72af;
+	--off-white-bg-color: #f9f7f7;
+	--danger-color: #e84545;
+	--success-color: #11CA1D;
 }
 
 /* === NAVIGATION BAR === */
@@ -24,22 +35,72 @@ nav ul li {
 }
 
 nav {
+	background-color: var(--dark-blue-bg-color);
+	color: #fff;
+	margin-bottom: 2rem; 
 	display: flex; 
 	justify-content: space-between;
+	align-items: center;
 	width: 100%;
-	margin: 3rem auto; 
+	height: 4rem;
 }
 
+nav a {
+	color: #fff;
+}
+
+/* === STATUS BAR === */
 .add-button {
 	display: flex;
 	justify-content: flex-end;
-	margin-right: 3rem;
+	background-color: var(--blue-bg-color);
 }
 
 .js-add-button {
-	padding: 0.5rem;
+	padding: 1rem;
 	font-size: 1rem;
 	border: 1px solid grey;
+}
+
+.status-bar {
+	display: flex;
+	justify-content: space-between;
+	margin: 2rem 2.5rem;
+}
+
+.status-message {
+	padding: 1rem;
+	background-color: var(--success-color);
+	border: 1px solid var(--success-color);
+}
+
+.confirm-delete {
+	width: 30%;
+}
+
+.confirm-delete-button,
+.cancel-delete-button {
+	padding: 0.3rem;
+}
+
+.confirm-delete-button {
+	background-color: var(--danger-color);
+	width: 70%;
+	padding: 0.5rem;
+	font-size: 0.9rem; 
+	color: var(--off-white-bg-color);
+}
+
+.cancel-delete-button {
+	width: 27%;
+}
+
+.invisible {
+	opacity: 0;
+}
+
+.visible {
+	opacity: 1;
 }
 
 /* === SIGN IN PAGE === */
@@ -57,9 +118,15 @@ nav {
 .sign-in {
 	width: 50%;
 	margin: 0 auto;
-	border: 1px solid green;
+	border: 1px solid var(--med-blue-bg-color);
 	padding: 1rem;
 	margin-top: 2rem;
+}
+
+.sign-in, 
+.new-user-signup,
+.sign-up {
+	background-color: var(--med-blue-bg-color)
 }
 
 .sign-up {
@@ -84,14 +151,25 @@ nav {
 
 .sign-up button,
 .sign-in button {
+color: var(--off-white-bg-color);
+letter-spacing: 1px; 
 font-weight: bold;
+background-color: var(--success-color)
 }
 
 .new-user-signup {
-	border: 1px solid green;
+	border: 1px solid var(--med-blue-bg-color);
 	margin-top: 2rem;
 	padding: 1rem;
 	width: 50%;
+}
+
+.new-user-signup {
+	color: var(--blue-bg-color);
+}
+
+.new-user-signup a {
+	color: var(--dark-blue-bg-color);
 }
 
 .sign-up label,
@@ -104,8 +182,10 @@ font-weight: bold;
 
 .welcome-message,
 .new-user-info {
+	color: var(--med-blue-bg-color);
 	width: 40%;
-	border: 1px solid purple;
+	background-color: var(--blue-bg-color);
+	border: 1px solid var(--blue-bg-color);
 	text-align: center;
 	line-height: 1.5rem;
 	padding: 5rem 4rem;
@@ -180,6 +260,7 @@ form {
 }
 
 .nav-links {
+	background-color: var(--blue-bg-color);
 	border: 1px solid black;
 	margin-left: 1rem;
 }
@@ -198,7 +279,9 @@ table {
 	table-layout: fixed;
 	width: 100%;
 	border-collapse: collapse;
-	border: 3px solid grey; 
+	border: 1px solid grey;
+	border-radius: 0.28571429rem; 
+	background-color: var(--med-blue-bg-color)
 }
 
 thead th:nth-child(0),

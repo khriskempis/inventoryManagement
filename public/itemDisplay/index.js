@@ -1,5 +1,3 @@
-const token = localStorage.getItem("token");
-
 let itemId = localStorage.getItem("itemId"); 
 
 
