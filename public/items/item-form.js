@@ -66,9 +66,9 @@ function handleSubmit(){
 		const newItem = {
 			name: itemForm.find('input[name="name"]').val(),
 			description: itemForm.find('textarea').val(),
-			category: itemForm.find('input[name="category"]').val(),
+			category: itemForm.find('#category').val(),
 			status: itemForm.find('input[name="status"]').val(),
-			qty: itemForm.find('select').val(),
+			qty: itemForm.find('#quantity').val(),
 			cost: itemForm.find('input[name="cost"]').val(),
 			price: {
 				regular: itemForm.find('input[name="price"]').val(),
