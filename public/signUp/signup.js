@@ -1,4 +1,5 @@
-const USERS_ENDPOINT = 'http://localhost:8080/users';
+// const USERS_ENDPOINT = 'http://localhost:8080/users';
+const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/users"
 
 function createUser(newUser, callbackFn){
 	$.ajax({
