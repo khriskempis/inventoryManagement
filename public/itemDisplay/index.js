@@ -51,7 +51,7 @@ function updateItem(itemId, updatedFields, callbackFn){
 function displayItem(data){
   let item = data
   const htmlString = `  
-    <div class="col-5">
+    <div class="photo-image col-5">
       <img src="../source-files/img/alien.PNG">
     </div>
     <div class="price-display">

@@ -363,6 +363,10 @@ tbody td {
   width: 33%;
 }
 
+.photo-image img {
+	width: 40%;
+}
+
 .price-display h5 {
   display: inline-block;
   margin-top: 1rem;
