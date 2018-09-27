@@ -12,7 +12,7 @@ function createUser(newUser, callbackFn){
 	})
 	.fail((data, err) => {
 		console.log(data)
-		errorMessage(data.responseJSON);
+		// errorMessage(data.responseJSON);
 	})
 };
 
