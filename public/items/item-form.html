@@ -1,90 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Champion Comics and Toys</title>
-	<link rel="stylesheet" type="text/css" href="../float-grid.css">
-	<link rel="stylesheet" type="text/css" href="../main.css">
+  <title>Champion Comics and Toys</title>
+  <link rel="stylesheet" type="text/css" href="../float-grid.css">
+  <link rel="stylesheet" type="text/css" href="../main.css">
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <nav>
-	<ul>
-		<li><a href="#" class="logo">Champion Portal</a></li>
-		<li><a href="../main/index.html">Website</a></li>
-		<li><a href="#">OfferUp</a></li>
-		<li><a href="#">Shopify</a></li>
-	</ul>
-	<ul>
-		<li><a href="#">My Account</a></li>
-		<li class="js-sign-out"><a href="../index.html">Sign Out</a></li>
-	</ul>
+  <ul>
+    <li><a href="#" class="logo">Champion Portal</a></li>
+    <li><a href="../main/index.html">Website</a></li>
+    <li><a href="#">OfferUp</a></li>
+    <li><a href="#">Shopify</a></li>
+  </ul>
+  <ul>
+    <li><a href="#">My Account</a></li>
+    <li class="js-sign-out"><a href="../index.html">Sign Out</a></li>
+  </ul>
 </nav>
+
+<div class="status-bar">
+  <div>
+    <button class="js-inventory-button">Back To Inventory</button>
+  </div>
+
+  <div class="status-message invisible">
+
+  </div>
+
+</div>
 
 <section class="content-info">
 
-	<div class="nav-links col-3">
-		<ul>
-			<li><a href="../main/index.html">Inventory</a></li>
-			<li><a href="#">Orders</a></li>
-			<li><a href="#">Shipping</a></li>
-			<li><a href="#">Vendors</a></li>
-		</ul>
-	</div>
+  <div class="nav-links col-3">
+    <ul>
+      <li><a href="../main/index.html">Inventory</a></li>
+      <li><a href="#">Orders</a></li>
+      <li><a href="#">Shipping</a></li>
+      <li><a href="#">Vendors</a></li>
+    </ul>
+  </div>
 
 
-	<form class="js-add-item">
-		<div class="form-text">
-			<label for="name">Name</label>
-			<input type="text" name="name" id="name">
+  <form class="js-add-item">
+    <div class="form-text">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
 
-			<label for="description">Description</label>
-			<textarea cols="18" rows="3" id="description"></textarea>
-		
-			<label for="category">Category</label>
-			<input type="text" name="category" id="category">
+      <label for="description">Description</label>
+      <textarea cols="18" rows="3" id="description"></textarea>
+    
+      <label for="category">Category</label>
+      <select id="category">
+        <option>Action Figure</option>
+        <option>Legos</option>
+        <option>Funko Pop</option>
+        <option>Poster</option>
+        <option>Print</option>
+        <option>Statue</option>
+        <option>Spinner</option>
+        <option>Comics</option>
+        <option>Collectible</option>
+        <option>Hot Wheels</option>
+      </select>
 
-			<label for="status">Status</label>
-			<input type="text" name="status" id="status">
-		</div>
+      <label for="status">Status</label>
+      <input type="text" name="status" id="status" required>
+    </div>
 
-		<div class="form-numbers">
-			<label for="quantity">Quantity</label>
-			<select id="quantity">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-				<option>6</option>
-				<option>7</option>
-				<option>8</option>
-				<option>9</option>
-				<option>10</option>
-			</select>
+    <div class="form-numbers">
+      <label for="quantity">Quantity</label>
+      <select id="quantity">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+      </select>
 
-			<label for="cost">Cost</label>
-			<input type="number" name="cost" id="cost">
+      <label for="cost">Cost</label>
+      <input type="number" name="cost" id="cost" required>
 
-			<label for="price">Price</label>
-			<input type="number" name="price" id="price">
+      <label for="price">Price</label>
+      <input type="number" name="price" id="price" required>
 
-			<label for="sale">Sale</label>
-			<input type="number" name="sale" id="sale">
+      <label for="sale">Sale</label>
+      <input type="number" name="sale" id="sale"required>
 
-			<label for="image">Image Url</label>
-			<input type="text" name="image" id="image">
-		</div>
-		<button type="submit" class="js-submit-button">Add Item</button>
-	</form>
+      <label for="image">Image Url</label>
+      <input type="text" name="image" id="image">
+    </div>
+    <button type="submit" class="js-submit-button">Add Item</button>
+
+      <div class="results-display invisible">
+        <!-- new Item display -->
+      </div>
+
+  </form>
 </section>
 
-<div class="results-display">
-	<!-- new Item display -->
-</div>
 
-
-
-	<script type="text/javascript" src="item-form.js"></script>
+  <script type="text/javascript" src="item-form.js"></script>
 </body>
 </html>
