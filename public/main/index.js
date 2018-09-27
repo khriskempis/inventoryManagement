@@ -75,7 +75,6 @@ function removeStatusMessage(){
 
 function renderConfirmDelete(itemName){
 	$('.confirm-delete').removeClass('invisible');
-	// $('.js-delete-message').text(`Delete the item ${itemName}?`)
 	$('.confirm-delete-button').text(`Delete ${itemName} item?`)
 }
 
@@ -123,6 +122,7 @@ function handleConfirmDeleteButton() {
 
 function handleCancelDeleteButton() {
 	$('.cancel-delete-button').click(function(event){
+		localStorage.removeItem("deleteItemId");
 		removeStatusMessage();
 	});
 };
