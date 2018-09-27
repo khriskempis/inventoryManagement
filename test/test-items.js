@@ -6,8 +6,10 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 
 const { app, runServer, closeServer } = require('../server');
+const { User } = require('../users');
 const { Item } = require('../items');
-const { TEST_DATABASE_URL } = require('../config'); 
+const { JWT_SECRET, TEST_DATABASE_URL } = require('../config'); 
+
 
 const expect = chai.expect; 
 
@@ -37,23 +39,45 @@ function tearDownDb() {
 describe('/items endpoint', function () {
 
 	const newItem = generateItem(); 
+	const username = "exampleUser2";
+	const password = "examplePass";
+	const firstName = "Example";
+	const lastName = "User";
+	let token
 
 
 	before(function() {
-		return runServer(TEST_DATABASE_URL);
+	runServer(TEST_DATABASE_URL)
+	User.hashPassword(password).then(password => 
+			User.create({
+				username,
+				password,
+				firstName,
+				lastName
+			})
+		);
+		return chai.request(app)
+		.post('/auth/login')
+		.send({username, password})
+		.then(res => {
+			token = res.body.authToken 
+		})
 	});
 
 	after(function() {
+		User.remove({})
+		// tearDownDb(); 
 		return closeServer(); 
 	});
 
 	beforeEach(function() {
-
 	});
 
 	afterEach(function() {
-		return Item.remove({name: newItem.name})
+			return Item.remove({name: newItem.name})
 	});
+
+	console.log(token)
 
 	describe('POST', function() {
 

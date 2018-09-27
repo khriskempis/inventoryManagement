@@ -4,6 +4,7 @@
 	<title>Champion Comics and Toys</title>
 	<link rel="stylesheet" type="text/css" href="../float-grid.css">
 	<link rel="stylesheet" type="text/css" href="../main.css">
+	<link href="../source-files/open-iconic.css" rel="stylesheet">
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -11,27 +12,40 @@
 
 <nav>
 	<ul>
-		<li><a href="../index.html" class="logo">Champion Portal</a></li>
+		<li><a href="#" class="logo">Champion Portal</a></li>
 		<li><a href="index.html">Website</a></li>
-		<li><a href="#">OfferUp</a></li>
-		<li><a href="#">Shopify</a></li>
+		<li><a>OfferUp</a></li>
+		<li><a>Shopify</a></li>
 	</ul>
 	<ul>
-		<li><a href="#">Users</a></li>
+		<li><a href="#">My Account</a></li>
+		<li class="js-sign-out"><a href="../index.html">Sign Out</a></li>
 	</ul>
 </nav>
 
-<div class="add-button">
-	<a href="../items/item-form.html" type="button" class="js-add-button">+ Add Item</a>
+<div class="status-bar">
+	<div>
+		<a href="../items/item-form.html" type="button" class="js-add-button">+ Add Item</a>
+	</div>
+
+	<div class="status-message invisible">
+
+	</div>
+
+	<div class="confirm-delete invisible">
+		<!-- <p class="js-delete-message"> </p> -->
+		<button class="confirm-delete-button"></button>
+		<button class="cancel-delete-button">Cancel</button>
+	</div> 
 </div>
 
 <section role="contentinfo" class="content-info container">
 	<div class="nav-links col-3">
 		<ul>
 			<li><a href="index.html">Inventory</a></li>
-			<li><a href="#">Orders</a></li>
-			<li><a href="#">Shipping</a></li>
-			<li><a href="#">Vendors</a></li>
+			<li><a>Orders</a></li>
+			<li><a>Shipping</a></li>
+			<li><a>Vendors</a></li>
 		</ul>
 	</div>
 
@@ -46,12 +60,12 @@
 					<th>Qty</th>
 					<th>Location</th>
 					<th>Status</th>
-					<th></th>
+					<th>View Delete</th>
 				</tr>
 			</thead>
 			<tbody class="js-table-data">
-			<!-- content from API -->
-			</tbody>
+				<!-- items from API -->
+		</tbody>
 		</table>
 	</div>
 

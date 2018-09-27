@@ -9,7 +9,10 @@ function postItemToApi(newItem, callbackFn){
 		method: "POST",
 		url: ITEMS_ENDPOINT,
 		data: JSON.stringify(newItem),
-		contentType: "application/json"
+		contentType: "application/json",
+		beforeSend: function(xhr){
+			xhr.setRequestHeader("Authorization", `Bearer ${localStorage.getItem("token")}`)
+		}
 	})
 	.done(function(item){
 		callbackFn(item);
@@ -47,7 +50,11 @@ function displayNewItem(item){
 	$('.results-display').html(tableHtmlString)
 }
 
-
+function handleSignOut(){
+	$('.js-sign-out').click(function(){
+		localStorage.removeItem("token");
+	})
+};
 
 function handleSubmit(){
 
@@ -74,7 +81,12 @@ function handleSubmit(){
 	});
 }
 
-$(handleSubmit())
+function init(){
+	$(handleSignOut());
+	$(handleSubmit());
+}
+
+$(init())
 
 
 

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Champion Comics</title>
+	<link rel="stylesheet" type="text/css" href="../float-grid.css">
+	<link rel="stylesheet" type="text/css" href="../main.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<nav>
+	<ul>
+		<li><a href="#" class="logo">Champion Portal</a></li>
+		<li><a href="../main/index.html">Website</a></li>
+		<li><a href="#">OfferUp</a></li>
+		<li><a href="#">Shopify</a></li>
+	</ul>
+	<ul>
+		<li><a href="#">My Account</a></li>
+		<li class="js-sign-out"><a href="../index.html">Sign Out</a></li>
+	</ul>
+</nav>
+
+<div class="status-bar">
+	<div>
+		<button class="js-inventory-button">Back To Inventory</button>
+	</div>
+
+	<div class="status-message invisible">
+
+	</div>
+
+	<div class="update-button">
+		<button class="js-update-item">Update Item</button>
+
+	</div> 
+</div>
+
+
+<section class="container content-info">
+
+	<div class="nav-links col-3">
+		<ul>
+			<li><a href="../main/index.html">Inventory</a></li>
+			<li><a href="#">Orders</a></li>
+			<li><a href="#">Shipping</a></li>
+			<li><a href="#">Vendors</a></li>
+		</ul>
+	</div>
+
+	<div class="item-display">
+		<div class="col-4">
+			<img src="../source-files/img/alien.PNG">
+			<h5>Description</h5>
+			<p class="item-description">
+				This is an Alien figurine, 1st edition. 
+			</p>
+		</div>
+		<div class="price-display">
+			<h5>Category</h5>
+			<p>Action Figure</p>
+
+			<h5>Status</h5>
+			<p>in Stock</p>
+
+			<h5>Location</h5>
+			<p>La Habra</p>
+
+			<h5>Quantity</h5>
+			<p>1</p>
+
+			<h5>Cost</h5>
+			<p>$8</p>
+
+			<h5>Price</h5>
+			<p>$18</p>
+
+			<h5>Sale</h5>
+			<p>$14</p>
+
+
+		</div>
+	</div>
+
+	<div class="message-board">
+		<p>Here you can view each individual Item</p>
+		<p>You may also update this Item by clicking the Update Item Button</p>
+
+		<ul>
+			<li>To Update, simple type the field you would like to update.</li>
+			<li>Then, the new value.</li>
+			<li>Click add and the updated field will included in the update.</li>
+			<li>You can update all fields by just adding the information.</li>
+			<li>When you're done adding fields to the update, click the update items button and your changes will be displayed.</li>
+	</ul>
+	</div>
+
+	<div class="form-pop-up hidden">
+		<form class="js-form-container" id="form-container">
+
+			<p>Please Type the field you would like to update alond with the new updated value</p>
+		
+			<label for="field">Field</label>
+			<input type="text" name="field" id="field">
+
+			<label for="updated-value">Value</label>
+			<input type="text" name="updated-value" id="updated-value">
+
+			<button class="js-add-updated-item">add</button>
+		</form>
+
+		<div class="updated-items">
+			<h5>Fields to be Updated</h5>
+			<!-- new items to be updated -->
+		</div>
+
+		<button class="js-update-fields" type="submit">UPDATE FIELDS</button>
+		<button class="update-fields-cancel">Close</button>
+	</div>
+
+
+</section>
+
+<script type="text/javascript" src="../main/index.js"></script>
+<script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>
