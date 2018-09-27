@@ -4,6 +4,7 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const mongoose = require('mongoose');
 const faker = require('faker');
+const jwt = require('jsonwebtoken');
 
 const { app, runServer, closeServer } = require('../server');
 const { User } = require('../users');
@@ -43,52 +44,159 @@ describe('/items endpoint', function () {
 	const password = "examplePass";
 	const firstName = "Example";
 	const lastName = "User";
-	let token
+	const token = jwt.sign(
+		{
+			user: {
+				username,
+				firstName,
+				lastName,
+			}
+		},
+		JWT_SECRET,
+		{
+			algorithm: 'HS256',
+			subject: username,
+			expiresIn: '7d'
+		}
+	);
+
 
 
 	before(function() {
-	runServer(TEST_DATABASE_URL)
-	User.hashPassword(password).then(password => 
-			User.create({
-				username,
-				password,
-				firstName,
-				lastName
-			})
-		);
-		return chai.request(app)
-		.post('/auth/login')
-		.send({username, password})
-		.then(res => {
-			token = res.body.authToken 
-		})
+		return runServer(TEST_DATABASE_URL)
 	});
 
 	after(function() {
-		User.remove({})
-		// tearDownDb(); 
 		return closeServer(); 
 	});
 
 	beforeEach(function() {
+		return User.hashPassword(password).then(password =>
+      User.create({
+        username,
+        password,
+        firstName,
+        lastName
+      })
+    );
 	});
 
 	afterEach(function() {
-			return Item.remove({name: newItem.name})
+		return User.remove({});
+			
 	});
 
-	console.log(token)
+	describe('protoected Items endpoint', function() {
 
-	describe('POST', function() {
+		//  it('Should reject requests with no credentials', function () {
+  //     return chai
+  //       .request(app)
+  //       .get('/api/protected')
+  //       .catch(err => {
+  //         if (err instanceof chai.AssertionError) {
+  //           throw err;
+  //         }
+
+  //         const res = err.response;
+  //         expect(res).to.have.status(401);
+  //       });
+  //   });
+
+		// it('Should reject requests with an invalid token', function () {
+  //     const token = jwt.sign(
+  //       {
+  //         username,
+  //         firstName,
+  //         lastName
+  //       },
+  //       'wrongSecret',
+  //       {
+  //         algorithm: 'HS256',
+  //         expiresIn: '7d'
+  //       }
+  //     );
+
+  //     return chai
+  //       .request(app)
+  //       .get('/api/protected')
+  //       .set('Authorization', `Bearer ${token}`)
+  //       .catch(err => {
+  //         if (err instanceof chai.AssertionError) {
+  //           throw err;
+  //         }
+
+  //         const res = err.response;
+  //         expect(res).to.have.status(401);
+  //       });
+  //   });
+		// it('Should reject requests with an expired token', function () {
+  //     const token = jwt.sign(
+  //       {
+  //         user: {
+  //           username,
+  //           firstName,
+  //           lastName
+  //         },
+  //         exp: Math.floor(Date.now() / 1000) - 10 // Expired ten seconds ago
+  //       },
+  //       JWT_SECRET,
+  //       {
+  //         algorithm: 'HS256',
+  //         subject: username
+  //       }
+  //     );
+
+  //     return chai
+  //       .request(app)
+  //       .get('/api/protected')
+  //       .set('authorization', `Bearer ${token}`)
+  //       .catch(err => {
+  //         if (err instanceof chai.AssertionError) {
+  //           throw err;
+  //         }
+
+  //         const res = err.response;
+  //         expect(res).to.have.status(401);
+  //       });
+  //   });
+
+  //   it('Should send protected data', function () {
+  //     const token = jwt.sign(
+  //       {
+  //         user: {
+  //           username,
+  //           firstName,
+  //           lastName
+  //         }
+  //       },
+  //       JWT_SECRET,
+  //       {
+  //         algorithm: 'HS256',
+  //         subject: username,
+  //         expiresIn: '7d'
+  //       }
+  //     );
+
+  //     return chai
+  //       .request(app)
+  //       .get('/api/protected')
+  //       .set('authorization', `Bearer ${token}`)
+  //       .then(res => {
+  //         expect(res).to.have.status(200);
+  //         expect(res.body).to.be.an('object');
+  //         expect(res.body.data).to.equal('rosebud');
+  //       });
+  //   });
 
 		it('should create a new item', function() {
+
 			return chai.request(app)
 				.post('/items')
 				.send(newItem)
+				.set('authorization', `Bearer ${token}`)
 				.then(res => {
 					expect(res).to.have.status(201);
 					expect(res.body).to.be.an('object');
-					console.log(res.body);
 					expect(res.body).to.have.keys(
 						'_id','name', 'description', 'qty', 'cost', 'price', 'category', 'status', 'image_url');
 					expect(res.body.name).to.equal(newItem.name);
@@ -112,9 +220,6 @@ describe('/items endpoint', function () {
 				});
 		});
 
-		// it('should reject item with missing name', function() {
-
-		// });
 	});
 
 	describe('GET request', function(){
@@ -125,7 +230,11 @@ describe('/items endpoint', function () {
 			const item2 = generateItem();
 			const item3 = generateItem(); 
 			return Item.create(	item1, item2, item3	)
-			.then(() => chai.request(app).get('/items'))
+			.then(() => {
+				return chai.request(app)
+				.get('/items')
+				.set('authorization', `Bearer ${token}`)
+			})
 			.then(res => {
 				expect(res).to.have.status(200);
 				expect(res.body).to.be.an('array');
@@ -139,9 +248,12 @@ describe('/items endpoint', function () {
 			return chai.request(app)
 			.post('/items')
 			.send(item1)
+			.set('authorization', `Bearer ${token}`)
 			.then(res => {
 				item = res.body
-				return chai.request(app).get(`/items/${item._id}`)
+				return chai.request(app)
+					.get(`/items/${item._id}`)
+					.set('authorization', `Bearer ${token}`)
 				})
 				.then(res => {
 					expect(res).to.have.status(200);
@@ -173,6 +285,7 @@ describe('/items endpoint', function () {
 			return chai.request(app)
 				.post('/items')
 				.send(item1)
+				.set('authorization',`Bearer ${token}`)
 				.then(res => {
 
 					item = res.body
@@ -180,11 +293,11 @@ describe('/items endpoint', function () {
 
 					return chai.request(app)
 						.put(`/items/${item._id}`)
-						.send(updateData);
+						.send(updateData)
+						.set('authorization',`Bearer ${token}`)
 				})
 				.then(res => {
 					expect(res).to.have.status(204);
-
 					return Item.findById(updateData._id)
 				})
 				.then(_item => {
@@ -204,10 +317,12 @@ describe('/items endpoint', function () {
 			return chai.request(app)
 				.post('/items')
 				.send(item1)
+				.set('authorization',`Bearer ${token}`)
 				.then(res => {
 					item1._id = res.body._id;
 					return chai.request(app)
 						.delete(`/items/${item1._id}`)
+						.set('authorization',`Bearer ${token}`)
 				})
 				.then(res => {
 					expect(res).to.have.status(204);
