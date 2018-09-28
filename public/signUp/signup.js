@@ -1,5 +1,5 @@
-// const USERS_ENDPOINT = 'http://localhost:8080/users';
-const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/users/"
+const USERS_ENDPOINT = 'http://localhost:8080/users';
+// const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/users/"
 
 function createUser(newUser, callbackFn){
 	$.ajax({
@@ -12,14 +12,14 @@ function createUser(newUser, callbackFn){
 		callbackFn(data);
 	})
 	.fail((data, err) => {
+		errorMessage(data.responseJSON);
 		console.log(data)
-		// errorMessage(data.responseJSON);
 	})
 };
 
-function errorMessage(responseJSON){
+function errorMessage(res){
 
-	const message = `${responseJSON.location} ${responseJSON.message}`
+	const message = `${res.message}`
 
 	$('.new-user-info').html(message);
 };

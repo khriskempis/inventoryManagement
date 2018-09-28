@@ -50,6 +50,10 @@ nav a {
   color: #fff;
 }
 
+.unclickable {
+	color: var(--grey-color);
+}
+
 /* === STATUS BAR === */
 
 .js-add-button {
@@ -176,11 +180,11 @@ background-color: var(--success-color)
 }
 
 .new-user-signup {
-  color: var(--blue-bg-color);
+  color: var(--dark-blue-bg-color);
 }
 
 .new-user-signup a {
-  color: var(--dark-blue-bg-color);
+  color: var(--blue-bg-color);
 }
 
 .sign-up label,

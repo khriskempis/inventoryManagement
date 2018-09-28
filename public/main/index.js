@@ -1,5 +1,5 @@
-// const INVENTORY_ENDPOINT = "http://localhost:8080/items/";
-const INVENTORY_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/items/"
+const INVENTORY_ENDPOINT = "http://localhost:8080/items/";
+// const INVENTORY_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/items/"
 let token = localStorage.getItem("token");
 let deleteItemId;
 
