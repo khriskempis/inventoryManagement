@@ -52,7 +52,7 @@ function displayItem(data){
   let item = data
   const htmlString = `  
     <div class="photo-image col-5">
-      <img src="/public/source-files/img/Alien.PNG">
+      <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/02/action-toys-scenes-marvel-hotkenobi-15-58ab2d60002ce__700.jpg">
     </div>
     <div class="price-display">
 
