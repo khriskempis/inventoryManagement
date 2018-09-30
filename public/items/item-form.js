@@ -84,7 +84,7 @@ function handleSubmit(){
     event.preventDefault(); 
 
     const itemForm = $('.js-add-item')
-
+    // grab values from user
     const newItem = {
       name: itemForm.find('input[name="name"]').val(),
       description: itemForm.find('textarea').val(),
@@ -98,7 +98,7 @@ function handleSubmit(){
       },
       image_url: itemForm.find('input[name="image"]').val()
     } 
-    
+    // send values
     postItemToApi(newItem, displayNewItem)
   });
 }

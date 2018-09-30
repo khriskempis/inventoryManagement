@@ -1,14 +1,8 @@
 let itemId = localStorage.getItem("itemId"); 
 
-
-// let itemId = "5b9c139c1834c51c948215e1"
-
-
 // API CALLS 
 
 function getItemInfo(itemId, callbackFn){
-  // console.log(itemId);
-  // console.log(INVENTORY_ENDPOINT + itemId)
 
   $.ajax({
     method: "GET",
@@ -93,6 +87,7 @@ function renderStatusMessage(message){
   const statusMessage = $('.status-message');
   statusMessage.html(`<p>${message}</p>`);
   statusMessage.removeClass('invisible');
+  // removes status message after 3 sec
   setTimeout(function(){
     statusMessage.addClass('invisible');
   }, 3000)
@@ -104,7 +99,7 @@ function displayUpdatedItems(field, value){
 };
 
 function renderUpdateButton(){
-
+  // renders the update button and hides pop up form
   const htmlString = `<button class="js-update-item">Update Item</button>`
   $('.update-button').html(htmlString);
   $('.pop-up').addClass('hidden');
@@ -113,6 +108,7 @@ function renderUpdateButton(){
 }
 
 function renderConfirmUpdateButtons(){
+  // render green update button
   const htmlString = `<button class="js-update-fields" type="submit">UPDATE FIELDS?</button>
       <button class="update-fields-cancel">Cancel</button>`
   $('.update-button').html(htmlString);
@@ -135,6 +131,7 @@ function handleAddUpdateItem(){
   addUpdatedItem.click(event => {
     event.preventDefault();
 
+    // need to fix 
     if(field.val().toLowerCase() === "price"){
       updatedFields.price = {
         regular: value.val()
@@ -158,6 +155,7 @@ function handleAddUpdateItem(){
 };
 
 function handleUpdateItemButton(){
+  // reveals pop up form
   const updateButton = $('.message-board').find('.update-button');
   updateButton.on("click", ".js-update-item", function(event) {
     $('.pop-up').removeClass('hidden'); 
@@ -165,6 +163,7 @@ function handleUpdateItemButton(){
 };
 
 function handleCancelButton(){
+  // calls render update and removes pop up form
   const cancelButton = $('.message-board').find('.update-button');
   cancelButton.on("click", ".update-fields-cancel", function(event){
     renderUpdateButton();
@@ -172,9 +171,10 @@ function handleCancelButton(){
 };
 
 function handleUpdateFieldsButton(){
+  // updates item 
   const updatedFieldsButton = $('.message-board').find('.update-button');
   updatedFieldsButton.on("click", ".js-update-fields", function(event) {
-
+    // check to see if fields to be updated is populated
     if(JSON.stringify(updatedFields).length < 3){
       return renderStatusMessage("Please add Fields to be updated");
     };

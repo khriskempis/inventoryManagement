@@ -93,8 +93,8 @@ function renderItemsHtml(){
 function handleViewButton() {
 	const viewButton = $('.inventory-display').find('.js-table-data');
 	viewButton.on("click", ".js-view-button", function(event){
+		// select id from item being clicked
 		let itemId = $(this).parent().attr("item-id");
-		// console.log(itemId);
 		localStorage.setItem("itemId", `${itemId}`)
 		window.location.href = "../itemDisplay/index.html"; 
 	});
@@ -103,6 +103,7 @@ function handleViewButton() {
 function handleDeleteButton() {
 	const deleteButton = $('.inventory-display').find('.js-table-data');
 	deleteButton.on('click', '.js-delete-button', function(event){
+		// select id from item 
 		deleteItemId = $(this).parent().attr("item-id");
 		let deleteItemName = $(this).parent().siblings("th").text();
 

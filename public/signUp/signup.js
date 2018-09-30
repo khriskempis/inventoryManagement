@@ -18,9 +18,7 @@ function createUser(newUser, callbackFn){
 };
 
 function errorMessage(res){
-
 	const message = `${res.message}`
-
 	$('.new-user-info').html(message);
 };
 
@@ -28,7 +26,6 @@ function errorMessage(res){
 function renderMessage(data){
 	const message = `<p>Welcome ${data.firstName || data.username}! </p>
 									 <p>You can now <a href="../index.html">sign in</a> to your account.</p>`
-
 	$('.new-user-info').html(message)
 };
 

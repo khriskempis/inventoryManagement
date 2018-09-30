@@ -27,6 +27,7 @@ function displayMessage(message){
 	console.log(message); 
 };
 
+// check if logged in then redirect
 function redirectToMain(){
 		if(loggedIn){
 			window.location.href = "main/index.html"

@@ -37,7 +37,7 @@ passport.use(jwtStrategy);
 
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
-
+// items route is only one that needs valid token
 app.use('/items', jwtAuth, itemsRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
