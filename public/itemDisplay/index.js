@@ -135,7 +135,18 @@ function handleAddUpdateItem(){
   addUpdatedItem.click(event => {
     event.preventDefault();
 
-    updatedFields[field.val().toLowerCase()] = value.val();
+    if(field.val().toLowerCase() === "price"){
+      updatedFields.price = {
+        regular: value.val()
+      }
+    } 
+    if(field.val().toLowerCase() === "sale") {
+      updatedFields.price = {
+        sale: value.val()
+      }    
+    } else {
+      updatedFields[field.val().toLowerCase()] = value.val();
+    }
 
     displayUpdatedItems(field.val(), value.val() )
 

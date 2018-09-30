@@ -508,6 +508,7 @@ div.hidden {
 	.nav-links {
 		width: 13%;
 		margin-bottom: 0;
+		height: 100%;
 	}
 
 	.nav-links ul {
