@@ -1,11 +1,10 @@
-const INVENTORY_ENDPOINT = "http://localhost:8080/items/";
-// const INVENTORY_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/items/"
+// const INVENTORY_ENDPOINT = "http://localhost:8080/items/";
+const INVENTORY_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/items/"
 let token = localStorage.getItem("token");
 let deleteItemId;
 
 // get data from API
 function getItems(callbackFn) {
-	// setTimeout(function(){ callbackFn(MOCK_ITEM_INFO)}, 100);
 	$.ajax({
 		method: "GET",
 		url: INVENTORY_ENDPOINT,

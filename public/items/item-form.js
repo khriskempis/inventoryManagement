@@ -1,5 +1,5 @@
-const ITEMS_ENDPOINT = "http://localhost:8080/items";
-// const ITEMS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/items/"
+// const ITEMS_ENDPOINT = "http://localhost:8080/items";
+const ITEMS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/items/"
 
 
 // POST ITEM 

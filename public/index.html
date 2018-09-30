@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Welcome To The Champion Portal</title>
+	<meta name="viewport" content="width=device-width"/>
 	<link rel="stylesheet" type="text/css" href="float-grid.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
 
@@ -10,7 +11,7 @@
 </head>
 <body>
 
-<nav>
+<nav role="navigation">>
 	<ul>
 		<li><a href="index.html" class="logo">Champion Portal</a></li>
 		<li><a href="#">Website</a></li>
@@ -22,15 +23,16 @@
 	</ul>
  --></nav>
 
+<main role="main">
 <section role="contentinfo"> 
 
-		<div class="container welcome-message">
+	<header role="banner" class="container welcome-message">
 		<h2>Welcome to the Champion Portal</h2>
 		<p>Please Sign in to view Champion Comic's Inventory</p>
-  </div>
+  </header>
 
 	
-	<div class="container content-info sign-in">
+	<section role="form" class="container content-info sign-in">
 		<form class="js-sign-in">
 			<!-- <label for="username">Username</label> -->
 			<input type="text" name="username" id="username" placeholder="Username" required>
@@ -40,12 +42,13 @@
 
 			<button type="submit">Sign In</button>
 		</form>
-	</div>
-	<div class="container content-info new-user-signup">
+	</section>
+	<section class="container content-info new-user-signup">
 		<p>New User? <a href="signUp/signup.html">Sign up</a></p>
-	</div>
+	</section>
 
 </section>
+</main>
 
 
 <script type="text/javascript" src="index.js"></script>

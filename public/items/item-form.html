@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Champion Comics and Toys</title>
+  <meta name="viewport" content="width=device-width"/>
   <link rel="stylesheet" type="text/css" href="../float-grid.css">
   <link rel="stylesheet" type="text/css" href="../main.css">
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<nav>
+<nav role="navigation">
   <ul>
     <li><a class="logo">Champion Portal</a></li>
     <li><a href="../main/index.html">Website</a></li>
@@ -34,17 +35,17 @@
 
 <section class="content-info">
 
-  <div class="nav-links col-3">
+  <nav role="navigation" class="nav-links col-3">
     <ul>
       <li><a href="../main/index.html">Inventory</a></li>
       <li><a class="unclickable">Orders</a></li>
       <li><a class="unclickable">Shipping</a></li>
       <li><a class="unclickable">Vendors</a></li>
     </ul>
-  </div>
+  </nav>
 
 
-  <form class="js-add-item">
+  <form role="form" class="js-add-item">
     <div class="form-text">
       <label for="name">Name</label>
       <input type="text" name="name" id="name" required>
@@ -94,16 +95,16 @@
       <input type="number" name="price" id="price" required>
 
       <label for="sale">Sale</label>
-      <input type="number" name="sale" id="sale"required>
+      <input type="number" name="sale" id="sale">
 
       <label for="image">Image Url</label>
       <input type="text" name="image" id="image">
     </div>
     <button type="submit" class="js-submit-button">Add Item</button>
 
-      <div class="results-display invisible">
+      <section role="contentinfo" class="results-display invisible" aria-live="assertive">
         <!-- new Item display -->
-      </div>
+      </section>
 
   </form>
 </section>

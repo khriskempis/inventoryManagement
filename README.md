@@ -5,7 +5,7 @@
 
 #### Description
 
-This web application is meant to be used as an internal tool to manage and organize a company's inventory of products and items
+This web application is meant to be used as an internal tool to manage and organize a company's inventory of products and items.
 
 ##### Features
 
