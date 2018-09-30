@@ -52,7 +52,7 @@ function displayItem(data){
   let item = data
   const htmlString = `  
     <div class="photo-image col-5">
-      <img src="../source-files/img/alien.PNG">
+      <img src="/public/source-files/img/alien.PNG">
     </div>
     <div class="price-display">
 
