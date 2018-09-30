@@ -32,7 +32,8 @@ a {
 
 nav ul li {
   display: inline-block;
-  margin: 0 1.5rem;
+  margin: 0 0.5rem;
+  font-size: 0.8rem;
 }
 
 nav {
@@ -57,7 +58,7 @@ nav a {
 /* === STATUS BAR === */
 
 .js-add-button {
-  padding: 1rem;
+  padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid grey;
   background-color: var(--blue-bg-color);
@@ -66,7 +67,7 @@ nav a {
 .status-bar {
   display: flex;
   justify-content: space-between;
-  margin: 2rem 2.5rem;
+  margin: 1rem;
 }
 
 .status-message {
@@ -138,6 +139,11 @@ nav a {
   margin-top: 2rem;
 }
 
+.sign-in,
+.sign-up {
+	width: 85%;
+}
+
 .sign-in, 
 .new-user-signup,
 .sign-up {
@@ -145,7 +151,7 @@ nav a {
 }
 
 .sign-up {
-  margin-top: 8rem;
+  margin-top: 1remd;
 }
 
 .sign-up input,
@@ -176,7 +182,7 @@ background-color: var(--success-color)
   border: 1px solid var(--med-blue-bg-color);
   margin-top: 2rem;
   padding: 1rem;
-  width: 50%;
+  width: 85%;
 }
 
 .new-user-signup {
@@ -198,18 +204,18 @@ background-color: var(--success-color)
 .welcome-message,
 .new-user-info {
   color: var(--med-blue-bg-color);
-  width: 40%;
+  width: 85%;
   background-color: var(--blue-bg-color);
   border: 1px solid var(--blue-bg-color);
   text-align: center;
   line-height: 1.5rem;
-  padding: 5rem 4rem;
-  margin-top: 8rem;
+  padding: 1rem 1rem;
+  margin-top: 1rem;
 }
 
 .welcome-message {
   margin-top: 4rem;
-  width: 50%;
+  width: 85%;
   padding: 2rem;
 }
 
@@ -272,12 +278,22 @@ input[type=number] {
 .content-info {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sign-up-container {
+	flex-wrap: wrap-reverse;
 }
 
 .nav-links {
   background-color: var(--blue-bg-color);
   border: 1px solid black;
-  margin-left: 1rem;
+  width: 97%;
+  margin-bottom: 2rem;
+}
+
+.nav-links ul {
+	display: flex;
 }
 
 .nav-links ul li {
@@ -285,7 +301,7 @@ input[type=number] {
 }
 
 .inventory-display {
-  margin-left: 1.5rem;
+  margin-left: 0.8rem;
 }
 
 /* === TABLE DATA === */
@@ -446,7 +462,67 @@ div.hidden {
 }
 
 
+@media only screen and (min-width: 640px){
+	
+	.content-info {
+	  display: flex;
+	  justify-content: space-between;
+	  flex-wrap: nowrap;
+	}
 
+	nav ul li {
+  	display: inline-block;
+  	margin: 0 1.5rem;
+ 		font-size: 1rem; 
+	}
+
+	.welcome-message {
+		width: 50%;
+	}
+
+	.sign-in,
+	.sign-up {
+		width: 50%;
+	}
+
+	.sign-up {
+ 		margin-top: 8rem;
+	}
+
+
+	.new-user-signup {
+		width: 50%;
+	}
+
+	.new-user-info,
+	.welcome-message {
+		width: 40%;
+		margin-top: 8rem;
+		padding: 5rem 4rem;
+	}
+
+	.status-bar {
+		margin: 2rem 2.5rem;
+	}
+
+	.nav-links {
+		width: 13%;
+		margin-bottom: 0;
+	}
+
+	.nav-links ul {
+		display: block;
+	}
+
+	.inventory-display {
+		margin-left: 1.5rem;
+	}
+
+	.js-add-button {
+		padding: 1rem;
+	}
+
+}
 
 
 

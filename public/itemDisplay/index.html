@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Champion Comics</title>
+  <meta name="viewport" content="width=device-width"/>
   <link rel="stylesheet" type="text/css" href="../float-grid.css">
   <link rel="stylesheet" type="text/css" href="../main.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
-<nav>
+<nav role="navigation">
   <ul>
     <li><a class="logo">Champion Portal</a></li>
     <li><a href="../main/index.html">Website</a></li>
@@ -33,18 +34,18 @@
 </div>
 
 
-<section class="container content-info">
+<main role="main" class="container content-info">
 
-  <div class="nav-links col-3">
+  <nav role="navigation" class="nav-links col-3">
     <ul>
       <li><a href="../main/index.html">Inventory</a></li>
       <li><a class="unclickable">Orders</a></li>
       <li><a class="unclickable">Shipping</a></li>
       <li><a class="unclickable">Vendors</a></li>
     </ul>
-  </div>
+  </nav>
 
-  <div class="item-display">
+  <section role="contentinfo" class="item-display">
     <div class="col-4">
       <img src="../source-files/img/alien.PNG">
       <h5>Description</h5>
@@ -76,9 +77,9 @@
 
 
     </div>
-  </div>
+  </section>
 
-  <div class="message-board">
+  <section role="contentinfo" class="message-board">
     <p>Here you can view each individual Item</p>
     <p>Click Update button to edit Item fields</p>
 
@@ -95,7 +96,7 @@
       
     </div> 
 
-    <div class="pop-up hidden">
+    <section role="form" class="pop-up hidden">
       <div class="form-pop-up">
       <form class="js-form-container" id="form-container">
         <label for="field">Field</label>
@@ -121,12 +122,12 @@
               <!-- new items to be updated -->
       </div>
     </div>
-    </div>
+    </section>
 
-  </div>
+  </section>
 
 
-</section>
+</main>
 
 <script type="text/javascript" src="../main/index.js"></script>
 <script type="text/javascript" src="index.js"></script>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Sign Up for Champion Portal</title>
+	<meta name="viewport" content="width=device-width"/>
 	<link rel="stylesheet" type="text/css" href="../float-grid.css">
 	<link rel="stylesheet" type="text/css" href="../main.css">
 
@@ -11,21 +12,20 @@
 </head>
 <body>
 
-<nav>
+<nav role="navigation">
 	<ul>
 		<li><a href="../index.html" class="logo">Champion Portal</a></li>
-		<li><a>Website</a></li>
-		<li><a>OfferUp</a></li>
-		<li><a>Shopify</a></li>
+		<li><a class="unclickable">Website</a></li>
+		<li><a class="unclickable">OfferUp</a></li>
+		<li><a class="unclickable">Shopify</a></li>
 	</ul>
-<!-- 	<ul>
-		<li><a href="#">Users</a></li>
-	</ul>
- --></nav>
 
-<section role="contentinfo" class="container content-info"> 
+ </nav>
+
+<main role="main">
+<section role="contentinfo" class="container content-info sign-up-container"> 
 	
-	<div class="sign-up">
+	<section class="sign-up">
 		<form class="js-sign-up">
 			<label for="username">Username:</label>
 			<input type="text" name="username" id="username" required>
@@ -47,17 +47,15 @@
 
 			<button type="submit">Sign up</button>
 		</form>
-	</div>
-	<div class="container new-user-info">
-		<p>Welcome To Champion Portal</p>
+	</section>
+	<header role="banner" class="container new-user-info">
+		<h3>Welcome To Champion Portal</h3>
 		<p>You have been given access to Champion Comics Inventory</p>
 <!-- 		<p>Please make sure you have your sign up code given by the administrator</p>
- -->	</div>
-
-
+ -->	</header>
 
 </section>
-
+</main>
 
 
 

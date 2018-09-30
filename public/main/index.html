@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Champion Comics and Toys</title>
+	<meta name="viewport" content="width=device-width"/>
 	<link rel="stylesheet" type="text/css" href="../float-grid.css">
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link href="../source-files/open-iconic.css" rel="stylesheet">
@@ -10,7 +11,7 @@
 </head>
 <body>
 
-<nav>
+<nav role="navigation">
 	<ul>
 		<li><a class="logo">Champion Portal</a></li>
 		<li><a href="index.html">Website</a></li>
@@ -23,7 +24,7 @@
 	</ul>
 </nav>
 
-<div class="status-bar">
+<section class="status-bar">
 	<div>
 		<a href="../items/item-form.html" type="button" class="js-add-button">+ Add Item</a>
 	</div>
@@ -37,19 +38,19 @@
 		<button class="confirm-delete-button"></button>
 		<button class="cancel-delete-button">Cancel</button>
 	</div> 
-</div>
+</section>
 
 <section role="contentinfo" class="content-info container">
-	<div class="nav-links col-3">
+	<nav role="navigaton" class="nav-links col-3">
 		<ul>
 			<li><a href="index.html">Inventory</a></li>
 			<li><a class="unclickable">Orders</a></li>
 			<li><a class="unclickable">Shipping</a></li>
 			<li><a class="unclickable">Vendors</a></li>
 		</ul>
-	</div>
+	</nav>
 
-	<div class="inventory-display">
+	<section role="contentinfo" class="inventory-display">
 		<table>
 			<thead>
 				<tr>
@@ -63,11 +64,11 @@
 					<th>View Delete</th>
 				</tr>
 			</thead>
-			<tbody class="js-table-data">
+			<tbody class="js-table-data" aria-live="assertive">
 				<!-- items from API -->
 		</tbody>
 		</table>
-	</div>
+	</section role="contentinfo">
 
 </section>
 
