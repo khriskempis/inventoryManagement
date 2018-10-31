@@ -18,13 +18,13 @@ function loginUser(userInfo) {
 	})
 	.fail(err => {
 		console.log(err);
-		displayMessage("An Error Occured")
+		displayMessage("An Error Occured, Please Try Again")
 	});
 };
 
 function displayMessage(message){
-	$('.welcome-message').append(message); 
-	console.log(message); 
+	$('.js-welcome-status-message').text(message); 
+	console.log(message.statusText); 
 };
 
 // check if logged in then redirect
