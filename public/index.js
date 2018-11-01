@@ -1,5 +1,5 @@
-// const USERS_ENDPOINT = "http://localhost:8080/auth/login";
-const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/auth/login";
+const USERS_ENDPOINT = "http://localhost:8080/auth/login";
+// const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/auth/login";
 let loggedIn = false; 
 
 
@@ -14,17 +14,17 @@ function loginUser(userInfo) {
 		localStorage.setItem("token", token.authToken);
 		loggedIn = true;
 		displayMessage("You have successfully Logged In");
-		redirectToMain();
+		setTimeout(redirectToMain, 2000)
 	})
 	.fail(err => {
 		console.log(err);
-		displayMessage("An Error Occured, Please Try Again")
+		displayMessage("Incorrect username or password, Please Try Again")
 	});
 };
 
 function displayMessage(message){
 	$('.js-welcome-status-message').text(message); 
-	console.log(message.statusText); 
+	console.log(message); 
 };
 
 // check if logged in then redirect

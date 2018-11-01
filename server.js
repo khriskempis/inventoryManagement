@@ -32,7 +32,7 @@ app.use(function(req, res, next) {
 	next(); 
 });
 
-passport.use(localStrategy); 
+// passport.use(localStrategy); 
 passport.use(jwtStrategy);
 
 const jwtAuth = passport.authenticate('jwt', { session: false });

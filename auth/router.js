@@ -15,15 +15,18 @@ const createAuthToken = function(user) {
   });
 };
 
-const localAuth = passport.authenticate('local', {session: false});
 router.use(bodyParser.json());
 // The user provides a username and password to login
-router.post('/login', localAuth, (req, res) => {
-  const authToken = createAuthToken(req.user.serialize());
-  return res.json({authToken})
-    .catch(err => {
-      res.json(err);
-    })
+router.post('/login', (req, res) => {
+  // const localAuth = passport.authenticate('local', {session: false }, function(err, user, info) {
+  //   console.log(info)
+  //   if(err) {
+  //     console.log(info);
+  //     return res.json(err);
+  //   }
+    const authToken = createAuthToken(req.user.serialize());
+    res.json({authToken});
+  // });
 });
 
 const jwtAuth = passport.authenticate('jwt', {session: false});

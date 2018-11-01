@@ -1,5 +1,5 @@
-// const USERS_ENDPOINT = 'http://localhost:8080/users';
-const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/users/"
+const USERS_ENDPOINT = 'http://localhost:8080/users';
+// const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/users/"
 
 function createUser(newUser, callbackFn){
 	$.ajax({
@@ -10,6 +10,7 @@ function createUser(newUser, callbackFn){
 	})
 	.done(data => {
 		callbackFn(data);
+		setTimeout(redirectToMain, 2000)
 	})
 	.fail((data, err) => {
 		errorMessage(data.responseJSON);
@@ -17,15 +18,20 @@ function createUser(newUser, callbackFn){
 	})
 };
 
+function redirectToMain(){
+		window.location.href = "../index.html"
+}
+
 function errorMessage(res){
-	const message = `${res.message}`
-	$('.new-user-info').html(message);
+	const message = `${res.location} ${res.message.toLowerCase()}`
+	$('.js-signup-status-message').html(message);
 };
 
 
 function renderMessage(data){
 	const message = `<p>Welcome ${data.firstName || data.username}! </p>
-									 <p>You can now <a href="../index.html">sign in</a> to your account.</p>`
+	<p>You are now being redirected to the Log In page</p>
+	<p>Please wait..</p>`
 	$('.new-user-info').html(message)
 };
 
@@ -40,7 +46,7 @@ function handleSubmit() {
 		const confirmPassword = $('#confirm-password').val();
 
 		if(password !== confirmPassword){
-			return $('.new-user-info').html('<p>Passwords do not Match!</p>'); 
+			return $('.js-signup-status-message').html('<p>Passwords do not Match!</p>'); 
 		}
 
 		// grab values from client

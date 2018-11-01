@@ -42,41 +42,51 @@ function updateItem(itemId, updatedFields, callbackFn){
 
 // RENDER ITEMS 
 
+// update values needs access to these values from data
+let salePrice 
+let regularPrice
+
 function displayItem(data){
-  let item = data
+  let item = data;
+  salePrice = item.price.sale;
+  regularPrice = item.price.regular
+  
+  const defaultImgLink = "https://static.boredpanda.com/blog/wp-content/uploads/2017/02/action-toys-scenes-marvel-hotkenobi-15-58ab2d60002ce__700.jpg"
   const htmlString = `  
     <div class="photo-image col-5">
-      <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/02/action-toys-scenes-marvel-hotkenobi-15-58ab2d60002ce__700.jpg">
+      <h3>${item.name}</h3>
+      <img src="${defaultImgLink}">
     </div>
     <div class="price-display">
+      <div> 
 
-      <h3>${item.name}</h3>
+        <h5>Description</h5>
+        <p id="item-description">
+          ${item.description}
+        </p>
 
-      <h5>Description</h5>
-      <p id="item-description">
-        ${item.description}
-      </p>
+        <h5>Category</h5>
+        <p>${item.category}</p>
 
-      <h5>Category</h5>
-      <p>${item.category}</p>
+        <h5>Status</h5>
+        <p>${item.status}</p>
 
-      <h5>Status</h5>
-      <p>${item.status}</p>
+        <h5>Location</h5>
+        <p>La Habra</p>
+      </div>
+      <div> 
+        <h5>Quantity</h5>
+        <p>${item.qty}</p>
 
-      <h5>Location</h5>
-      <p>La Habra</p>
+        <h5>Cost</h5>
+        <p>$${item.cost}</p>
 
-      <h5>Quantity</h5>
-      <p>${item.qty}</p>
+        <h5></h5>Price</h5>
+        <p class="js-price">$${item.price.regular}</p>
 
-      <h5>Cost</h5>
-      <p>$${item.cost}</p>
-
-      <h5>Price</h5>
-      <p>$${item.price.regular}</p>
-
-      <h5>Sale</h5>
-      <p>$${item.price.sale}</p>
+        <h5>Sale</h5>
+        <p class="js-sale">$${item.price.sale}</p>
+      </div>
     </div>
 `
 
@@ -130,19 +140,24 @@ function handleAddUpdateItem(){
 
   addUpdatedItem.click(event => {
     event.preventDefault();
+    const selectedField = field.val().toLowerCase();
+
+    console.log(salePrice)
 
     // need to fix 
-    if(field.val().toLowerCase() === "price"){
+    if(selectedField === "price"){
       updatedFields.price = {
-        regular: value.val()
+        regular: value.val(),
+        sale: salePrice
       }
     } 
-    if(field.val().toLowerCase() === "sale") {
+    if(selectedField === "sale") {
       updatedFields.price = {
+        regular: regularPrice,
         sale: value.val()
       }    
     } else {
-      updatedFields[field.val().toLowerCase()] = value.val();
+      updatedFields[selectedField] = value.val();
     }
 
     displayUpdatedItems(field.val(), value.val() )

@@ -302,13 +302,17 @@ input[type=number] {
 
 .inventory-display {
   margin-left: 0.8rem;
+  overflow-x: scroll;
+}
+
+table {
+  width: 600px; 
 }
 
 /* === TABLE DATA === */
 
 table {
   table-layout: fixed;
-  width: 100%;
   border-collapse: collapse;
   border: 1px solid grey;
   border-radius: 0.28571429rem; 
@@ -335,12 +339,17 @@ tbody td {
 }
 
 .edit-buttons {
-  display: flex;
+  display: block;
 }
-
 .js-view-button,
 .js-delete-button {
-  width: 100%}
+  width: 100%; 
+}
+
+.js-view-button img,
+.js-delete-button img {
+  width: 0.8rem;
+}
 
 .js-next-prev {
   display: flex;
@@ -357,8 +366,13 @@ tbody td {
 
 /* === ITEM DISPLAY PAGE === */
 
+.item-display-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .item-display {
-  display: flex; 
+  display: block; 
   justify-content: space-around;
 }
 
@@ -380,7 +394,8 @@ tbody td {
 }
 
 .price-display {
-  width: 33%;
+  display: flex; 
+  justify-content: space-around;
 }
 
 .photo-image {
@@ -396,7 +411,7 @@ tbody td {
 }
 
 .message-board {
-  /*width: 30%;*/
+  width: 30%;
   flex-grow: 3;
 }
 
@@ -516,12 +531,36 @@ div.hidden {
 	}
 
 	.inventory-display {
-		margin-left: 1.5rem;
+    margin-left: 1.5rem;
+    width: inherit;
+    overflow-x: auto;
 	}
 
 	.js-add-button {
 		padding: 1rem;
-	}
+  }
+  
+  table {
+    width: 100%;
+  }
+
+  .edit-buttons {
+    display: flex;
+  }
+
+  .js-view-button{
+    width: 100%;
+  }
+
+  .price-display {
+    width: 33%;
+  }
+  .item-display {
+    display: flex; 
+    justify-content: space-between;
+    width: 55%;
+    margin: 0 1rem;
+  }
 
 }
 
