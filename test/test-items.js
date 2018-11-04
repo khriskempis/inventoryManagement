@@ -22,10 +22,8 @@ function generateItem() {
 		description: faker.lorem.sentence(),
 		qty: faker.random.number(),
 		cost: faker.random.number(),
-		price: {
-			regular: faker.random.number(),
-			sale: faker.random.number()
-		},
+		price: faker.random.number(),
+		sale: faker.random.number(),
 		category: ["action figure", "godzilla"],
 		status: "in stock",
 		image_url: {url: faker.image.imageUrl()}
@@ -198,13 +196,13 @@ describe('/items endpoint', function () {
 					expect(res).to.have.status(201);
 					expect(res.body).to.be.an('object');
 					expect(res.body).to.have.keys(
-						'_id','name', 'description', 'qty', 'cost', 'price', 'category', 'status', 'image_url');
+						'_id','name', 'description', 'qty', 'cost', 'price', 'category', 'sale', 'status', 'image_url');
 					expect(res.body.name).to.equal(newItem.name);
 					expect(res.body.description).to.equal(newItem.description);
 					expect(res.body.qty).to.equal(newItem.qty);
 					expect(res.body.cost).to.equal(newItem.cost);
-					expect(res.body.price.regular).to.equal(newItem.price.regular);
-					expect(res.body.price.sale).to.equal(newItem.price.sale);
+					expect(res.body.price).to.equal(newItem.price);
+					expect(res.body.sale).to.equal(newItem.sale);
 					expect(res.body.image_url.url).to.equal(newItem.image_url.url);
 					return Item.findOne({ name: newItem.name });
 				})
@@ -214,8 +212,8 @@ describe('/items endpoint', function () {
 					expect(item.description).to.equal(newItem.description);
 					expect(item.qty).to.equal(newItem.qty);
 					expect(item.cost).to.equal(newItem.cost);
-					expect(item.price.regular).to.equal(newItem.price.regular); 
-					expect(item.price.sale).to.equal(newItem.price.sale)
+					expect(item.price).to.equal(newItem.price); 
+					expect(item.sale).to.equal(newItem.sale)
 					expect(item.image_url.url).to.equal(newItem.image_url.url);
 				});
 		});

@@ -48,13 +48,11 @@ let regularPrice
 
 function displayItem(data){
   let item = data;
-  salePrice = item.price.sale;
-  regularPrice = item.price.regular
   
   const defaultImgLink = "https://static.boredpanda.com/blog/wp-content/uploads/2017/02/action-toys-scenes-marvel-hotkenobi-15-58ab2d60002ce__700.jpg"
   const htmlString = `  
     <div class="photo-image col-5">
-      <h3>${item.name}</h3>
+      <h2>${item.name}</h2>
       <img src="${defaultImgLink}">
     </div>
     <div class="price-display">
@@ -82,10 +80,10 @@ function displayItem(data){
         <p>$${item.cost}</p>
 
         <h5></h5>Price</h5>
-        <p class="js-price">$${item.price.regular}</p>
+        <p class="js-price">$${item.price}</p>
 
         <h5>Sale</h5>
-        <p class="js-sale">$${item.price.sale}</p>
+        <p class="js-sale">$${item.sale}</p>
       </div>
     </div>
 `
@@ -145,20 +143,20 @@ function handleAddUpdateItem(){
     console.log(salePrice)
 
     // need to fix 
-    if(selectedField === "price"){
-      updatedFields.price = {
-        regular: value.val(),
-        sale: salePrice
-      }
-    } 
-    if(selectedField === "sale") {
-      updatedFields.price = {
-        regular: regularPrice,
-        sale: value.val()
-      }    
-    } else {
+    // if(selectedField === "price"){
+    //   // updatedFields.price = {
+    //   //   regular: value.val(),
+    //   //   sale: salePrice
+    //   // }
+    // } 
+    // if(selectedField === "sale") {
+    //   // updatedFields.price = {
+    //   //   regular: regularPrice,
+    //   //   sale: value.val()
+    //   }    
+    // } else {
       updatedFields[selectedField] = value.val();
-    }
+    // }
 
     displayUpdatedItems(field.val(), value.val() )
 
