@@ -1,51 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Welcome To The Champion Portal</title>
+	<title>Inventory Management</title>
 	<meta name="viewport" content="width=device-width"/>
 	<link rel="stylesheet" type="text/css" href="float-grid.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
-<nav role="navigation">
-	<ul>
-		<li><a href="index.html" class="logo">Champion Portal</a></li>
-	</ul>
-</nav>
+
 
 <main role="main">
-<section role="contentinfo"> 
 
-	<header role="banner" class="container welcome-message">
-		<h2>Welcome to the Champion Portal</h2>
-		<p>Please Sign in to view Champion Comic's Inventory</p>
-		<p class="js-welcome-status-message"></p>
-  </header>
+		<header role="banner">
+				<div class="headline">
+						<h1>Inventory Management</h1>
+						<p>Organize your inventory with the Inventory Managment Tool</p>
+						<button class="hvr-bounce-in">Try for Free!</button>
+				</div>
+			</header>
 
-	
-	<section role="form" class="container content-info sign-in">
-		<form class="js-sign-in">
-			<!-- <label for="username">Username</label> -->
-			<input type="text" name="username" id="username" placeholder="Username" required>
+	<section role="contentinfo"> 
 
-			<!-- <label for="password">Password</label> -->
-			<input type="password" name="password" id="password" placeholder="Password" required>
+		<div class="details-group">
+			<div data-aos="fade-up" 
+			data-aos-duration="800"
+			data-aos-easing="ease-in-out"
+			class="details">
+					<img src="../imgs/storage.svg"/>
+					<p>Easily organize and view
+						your products in a clear  layout</p>
+			</div>
+			<div data-aos="fade-up" 
+			data-aos-duration="800"
+			data-aos-offset="300"
+			data-aos-easing="ease-in-out"
+			class="details">
+					<img src="../imgs/growth.svg"/>
+					<p>Quickly add items to your 
+						growing inventory</p>
+			</div>
+			<div 
+			data-aos="fade-up" 
+			data-aos-duration="800"
+			data-aos-offset="400"
+			data-aos-easing="ease-in-out"class="details">
+					<img src="../imgs/online-shop.svg"/>
+					<p>Track the cost of each Item as welll as its sale price</p>
+			</div>
+		</div>
 
-			<button type="submit">Sign In</button>
-		</form>
 	</section>
-	<section class="container content-info new-user-signup">
-		<p>New User? <a href="signUp/signup.html">Sign up</a></p>
-	</section>
 
-</section>
+	<section>
+		<div class="register-form-container">
+			<div 
+				data-aos="zoom-in-left"
+				data-aos-offset="200"
+				data-aos-duration="500"
+				data-aos-easing="ease-in-out"
+				class="register-form">
+				<div class="register-form-header">
+						<h3>Register</h3>
+				</div>
+				<form>
+					<label for="username">Username</label>
+					<input type="text" name="username" id="username" placeholder="Username"required>
+					<label for="password">Password</label>
+					<input type="text" name="password" id="password" placeholder="Password" required>
+					<label for="confirm-password">Confirm Password</label>
+					<input type="text" name="confirm-passowrd" id="confirm-passowrd" required>
+					<button class="register-button hvr-grow">Get Organized!</button>
+				</form>
+			</div>
+		</div>
+	</section>
 </main>
 
-
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+	AOS.init();
+</script>
 <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

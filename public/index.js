@@ -3,6 +3,7 @@ const USERS_ENDPOINT = "http://localhost:8080/auth/login";
 let loggedIn = false; 
 
 
+
 function loginUser(userInfo) {
 	$.ajax({
 		method: "POST",
@@ -51,5 +52,5 @@ function handleSubmit(){
 	});
 };
 
-
+AOS.init();
 $(handleSubmit())
