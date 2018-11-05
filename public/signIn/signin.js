@@ -13,7 +13,7 @@ function loginUser(userInfo) {
 	.done(token => {
 		localStorage.setItem("token", token.authToken);
 		loggedIn = true;
-		displayMessage("You have successfully Logged In");
+		displayMessage("You have successfully Logged In, Please Wait...");
 		setTimeout(redirectToMain, 2000)
 	})
 	.fail(err => {

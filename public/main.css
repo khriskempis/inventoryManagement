@@ -26,6 +26,7 @@ a {
   --danger-color: #e84545;
   --success-color: #28B431;
   --grey-color: #636363;
+  --button-color: linear-gradient(-180deg, #6E95FF 0%, #1E387E 93%);;
 }
 
 /* === NAVIGATION BAR === */
@@ -62,10 +63,11 @@ nav a {
 /* === STATUS BAR === */
 
 .js-add-button {
+  color: white;
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid grey;
-  background-color: var(--blue-bg-color);
+  background-image: var(--button-color);
 }
 
 .status-bar {
@@ -116,7 +118,15 @@ nav a {
 
 /* === LANDING PAGE === */
 
-header {
+.landing-page-sign-in {
+  display: block;
+  position: absolute;
+  right: 0;
+  margin: 2rem;
+  font-size: 12px; 
+}
+
+.landing-header {
   width: 100vw;
   height: 50vh;
   background-size: cover;
@@ -151,7 +161,7 @@ header {
   color: white; 
   border: none; 
   border-radius: 2px; 
-  background-image: linear-gradient(-180deg, #6E95FF 0%, #1E387E 93%);
+  background-image: var(--button-color);
   margin: 1rem auto; 
 }
 
@@ -159,6 +169,7 @@ header {
   margin: 3rem auto; 
   width: 70%; 
   text-align: center;
+  font-size: 16px;
 }
 
 .details img {
@@ -171,6 +182,7 @@ header {
   text-align: center;
   margin-bottom: 1rem;
   padding-top: 0.3rem;
+  letter-spacing: 2px; 
 }
 
 .register-form-header {
@@ -253,7 +265,12 @@ form {
 }
 
 @media only screen and (min-width: 640px){ 
-  header {
+  .landing-page-sign-in {
+    margin: 3rem;
+    font-size: 18px; 
+  }
+
+  .landing-header {
     height: 100vh;
   }
 
@@ -296,6 +313,19 @@ form {
 }
 
 /* === SIGN IN PAGE === */
+
+.sign-in-welcome-message,
+.welcome-message {
+  background-image: linear-gradient(-180deg, #6E95FF 0%, #1E387E 93%);
+}
+
+.sign-in-welcome-message {
+  color: white;
+  text-align: center;
+  line-height: 1.5rem;
+  padding: 3rem;
+  margin-top: 1rem;
+}
 
 .js-sign-up,
 .js-sign-in {
@@ -383,6 +413,14 @@ background-color: var(--success-color)
   margin: 0 0.5rem;
 }
 
+@media only screen and (min-width: 640px){
+  .sign-in-welcome-message {
+    margin: 4rem auto; 
+		width: 50%;
+		padding: 2rem;
+	}
+}
+
 /* === SIGN UP PAGE === */
 
 .welcome-message,
@@ -419,6 +457,7 @@ background-color: var(--success-color)
 .pop-up-add-item {
   position: absolute; 
   top: 9rem;
+  box-shadow: 2px 2px 15px;
 }
 
 .add-item-header {
@@ -428,7 +467,7 @@ background-color: var(--success-color)
   text-align: center;
   /* border: 1px solid blue; */
   width: 100%;  
-  background-color: #E5EFF8;
+  background-color: var(--off-white-bg-color);
 }
 
 .js-add-item {
@@ -436,7 +475,7 @@ background-color: var(--success-color)
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 0 auto; 
-  background-color: #E5EFF8;
+  background-color: var(--off-white-bg-color);
   padding: 1rem;
   width: 100%;
 }
@@ -470,7 +509,7 @@ select {
 .add-item-buttons .button {
   padding: 0.5rem;
   margin: 0 0.5rem;
-  background-color: var(--blue-bg-color);
+  background-image: var(--button-color);
   color: white;
 }
 
@@ -730,10 +769,6 @@ div.hidden {
  		font-size: 1rem; 
 	}
 
-	.welcome-message {
-		width: 50%;
-	}
-
 	.sign-in,
 	.sign-up {
 		width: 50%;
@@ -748,9 +783,8 @@ div.hidden {
 		width: 50%;
 	}
 
-	.new-user-info,
-	.welcome-message {
-		width: 40%;
+	.new-user-info {
+		width: 50%;
 		margin-top: 8rem;
 		padding: 5rem 4rem;
 	}
