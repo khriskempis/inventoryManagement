@@ -24,7 +24,7 @@ function redirectToMain(){
 }
 
 function errorMessage(res){
-	const message = `${res.location} ${res.message.toLowerCase()}`
+	const message = `${res.message}`
 	$('.register-status-message').html(message);
 };
 
