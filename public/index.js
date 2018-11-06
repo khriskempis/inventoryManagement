@@ -14,8 +14,8 @@ function createUser(newUser, callbackFn){
 		setTimeout(redirectToMain, 1000)
 	})
 	.fail((data, err) => {
+		console.log(data);
 		errorMessage(data.responseJSON);
-		console.log(data)
 	})
 };
 
