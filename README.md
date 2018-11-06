@@ -1,7 +1,7 @@
 
-## Champion Inventory Management Tool
+## Inventory Management Tool
 
-[Champion Comics Portal](https://obscure-springs-35933.herokuapp.com/)
+[Inventory Management Tool](https://obscure-springs-35933.herokuapp.com/)
 
 #### Description
 
