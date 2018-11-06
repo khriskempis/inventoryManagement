@@ -20,25 +20,22 @@ This web application is meant to be used as an internal tool to manage and organ
 ----
 ##### User Flow
 
-You will be initially be greeted by the sign in page which also includes a link to sign up for an account.
+![](./public/source-files/img/landing-page.png)
+
+The landing page has all the information about the product and the functionality that it currently
+has. If you click the Try for Free button it will automatically scroll down to the register button.
+
+![](./public/source-files/img/register-form.png)
+
+You can also click the Sign In link at the top-right of the landing page which will take you to the Sign-in page where you must provide your username and password to access the website.
 
 ![](./public/source-files/img/sign-in-page.jpg)
 
-If you click the sign up link, you will be redirected to the create user page.
-After successfully creating a user, you will be redirected to the sign in page where you are required to sign in. 
-
-![](./public/source-files/img/signup-page.jpeg)
-
 Once signed in, you will then have access to view the inventory.
-In the upper left hand corner is a button to add and item.
+In the upper left hand corner is a button to add an item.
 To the right of each item are buttons to view/edit and delete items.
 
-![](./public/source-files/img/main-page.jpg)
-
-If you click the Add Item button, you will be taken to the add item page where you can input the details of a new item including description, category, status, etc.
-After clicking the add item button to confirm the item, a status message is displayed telling you the item has been created along with a preview of how the item will look in the view/edit page.
-
-![](./public/source-files/img/add-item-page.jpg)
+![](./public/source-files/img/main.png)
 
 From the main page, you can edit each individual item.
 To update an item, simply click the update item button.
