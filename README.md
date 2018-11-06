@@ -29,7 +29,7 @@ has. If you click the Try for Free button it will automatically scroll down to t
 
 You can also click the Sign In link at the top-right of the landing page which will take you to the Sign-in page where you must provide your username and password to access the website.
 
-![](./public/source-files/img/sign-in-page.jpg)
+![](./public/source-files/img/sign-in.png)
 
 Once signed in, you will then have access to view the inventory.
 In the upper left hand corner is a button to add an item.
