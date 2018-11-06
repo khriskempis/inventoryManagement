@@ -1,5 +1,5 @@
-// const ITEMS_ENDPOINT = "http://localhost:8080/items";
-const ITEMS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/items/"
+const ITEMS_ENDPOINT = "http://localhost:8080/items";
+// const ITEMS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/items/"
 
 
 // POST ITEM 
@@ -51,10 +51,10 @@ function displayNewItem(item){
       <p>$${item.cost}</p>
 
       <h5>Price</h5>
-      <p>$${item.price.regular}</p>
+      <p>$${item.price}</p>
 
       <h5>Sale</h5>
-      <p>$${item.price.sale}</p>`
+      <p>$${item.sale}</p>`
 
   $('.results-display').html(htmlString);
   $('.results-display').removeClass('invisible');
@@ -72,11 +72,13 @@ function renderStatusMessage(message){
 
 // CLICK EVENTS
 
-function handleSignOut(){
-  $('.js-sign-out').click(function(){
-    localStorage.removeItem("token");
-  })
+function handleAddItemCancel() {
+	$('.js-form-cancel-button').on('click', function(event){
+		event.preventDefault();
+		$('.pop-up-add-item').addClass('hidden');
+	});
 };
+
 
 function handleSubmit(){
 
@@ -89,31 +91,22 @@ function handleSubmit(){
       name: itemForm.find('input[name="name"]').val(),
       description: itemForm.find('textarea').val(),
       category: itemForm.find('#category').val(),
-      status: itemForm.find('input[name="status"]').val(),
+      status: itemForm.find('#status').val(),
       qty: itemForm.find('#quantity').val(),
       cost: itemForm.find('input[name="cost"]').val(),
-      price: {
-        regular: itemForm.find('input[name="price"]').val(),
-        sale: itemForm.find('input[name="sale"]').val(),
-      },
+      price: itemForm.find('input[name="price"]').val(),
+      sale: itemForm.find('input[name="sale"]').val(),
       image_url: itemForm.find('input[name="image"]').val()
     } 
     // send values
     postItemToApi(newItem, displayNewItem)
+    getItems(generateAndDisplayArrayOfItems);
+    $('.pop-up-add-item').addClass('hidden');
   });
 }
 
-function handleInventoryButton(){
-  const inventoryButton = $('.js-inventory-button')
-  localStorage.removeItem("itemId");
-  inventoryButton.click(function(event) {
-    window.location.href = "../main/index.html"; 
-  });
-};
-
 function init(){
-  $(handleInventoryButton());
-  $(handleSignOut());
+  $(handleAddItemCancel());
   $(handleSubmit());
 }
 

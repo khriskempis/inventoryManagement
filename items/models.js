@@ -8,10 +8,8 @@ const ItemSchema = Schema({
 	description: String,
 	qty: { type: Number, default: 1 },
 	cost: Number,
-	price: { 
-		regular: { type: Number, required: true },
-		sale: Number
-	},
+	price: Number,
+	sale: Number,
 	category: [String],
 	status: String,
 	image_url: {
@@ -26,10 +24,8 @@ ItemSchema.methods.serialize = function() {
 		description: this.description,
 		qty: this.qty,
 		cost: this.cost,
-		price: {
-			regular: this.price.regular,
-			sale: this.price.sale
-		},
+		price: this.price,
+		sale: this.sale,
 		category: this.category,
 		status: this.status,
 		image_url: { 

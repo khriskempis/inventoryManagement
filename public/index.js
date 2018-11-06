@@ -1,55 +1,72 @@
-// const USERS_ENDPOINT = "http://localhost:8080/auth/login";
-const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/auth/login";
-let loggedIn = false; 
+const USERS_ENDPOINT = 'http://localhost:8080/users';
+// const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/users/"
 
-
-function loginUser(userInfo) {
+function createUser(newUser, callbackFn){
 	$.ajax({
 		method: "POST",
 		url: USERS_ENDPOINT,
-		data: JSON.stringify(userInfo),
+		data: JSON.stringify(newUser),
 		contentType: "application/json"
 	})
-	.done(token => {
-		localStorage.setItem("token", token.authToken);
-		loggedIn = true;
-		displayMessage("You have successfully Logged In");
-		redirectToMain();
+	.done(data => {
+		callbackFn(data);
+		renderMessage('You are being redirected..')
+		setTimeout(redirectToMain, 1000)
 	})
-	.fail(err => {
-		console.log(err);
-		displayMessage("An Error Occured")
-	});
+	.fail((data, err) => {
+		errorMessage(data.responseJSON);
+		console.log(data)
+	})
 };
 
-function displayMessage(message){
-	$('.welcome-message').append(message); 
-	console.log(message); 
-};
-
-// check if logged in then redirect
 function redirectToMain(){
-		if(loggedIn){
-			window.location.href = "main/index.html"
-		}
+		window.location.href = "../signIn/signIn.html"
 }
 
+function errorMessage(res){
+	const message = `${res.location} ${res.message.toLowerCase()}`
+	$('.register-status-message').html(message);
+};
 
-function handleSubmit(){
+function renderMessage(message){
+	const messageElement = $('.register-status-message')
 
-	const signInForm = $('.js-sign-in');
+	messageElement.html(message)
+}
 
-	signInForm.submit(function(event){
+function handleSubmit() {
+	const signUpForm = $('.js-register-form');
+
+	signUpForm.submit(function(event){
 		event.preventDefault();
+		// check if password matches 
+		const password = $('#password').val();
+		const confirmPassword = $('#confirm-password').val();
 
-		const userCredentials = {
-			username: signInForm.find('input[name="username"]').val(),
-			password: signInForm.find('input[name="password"]').val()
+		if(password !== confirmPassword){
+			return $('.register-status-message').html('<p>Passwords do not Match!</p>'); 
 		}
 
-		loginUser(userCredentials)
+		// grab values from client
+		const newUser = {
+			username: signUpForm.find('input[name="username"]').val(),
+			password: signUpForm.find('input[name="password"]').val(),
+		}
+
+		createUser(newUser, renderMessage)
 	});
 };
 
 
-$(handleSubmit())
+AOS.init();
+
+$(handleSubmit());
+
+$('#try-button').click(function() {
+  $('html, body').animate(
+    {
+      scrollTop: $('.register-form-container').offset().top,
+    },
+    1500,
+  );
+});

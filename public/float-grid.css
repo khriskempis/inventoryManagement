@@ -21,6 +21,22 @@
 	margin-top: 10px;
 }
 
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+form.input {
+	float: right; 
+}
+
+.clear-fix {
+	clear: right;
+}
+
 
 /* === COLUMN WIDTHS === */
 .col-3 {

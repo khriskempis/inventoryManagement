@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Welcome To The Champion Portal</title>
+	<meta name="viewport" content="width=device-width"/>
+	<link rel="stylesheet" type="text/css" href="../float-grid.css">
+	<link rel="stylesheet" type="text/css" href="../main.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<nav role="navigation">
+	<ul>
+		<li><a href="../index.html" class="logo">Champion Portal</a></li>
+	</ul>
+</nav>
+
+<main role="main">
+<section role="contentinfo"> 
+
+	<header role="banner" class="container sign-in-welcome-message">
+		<h2>Welcome to the Inventory Management Tool</h2>
+		<p>Please Sign In to view your inventory</p>
+		<p class="js-welcome-status-message"></p>
+  </header>
+
+	
+	<section role="form" class="container content-info sign-in">
+		<form class="js-sign-in">
+			<!-- <label for="username">Username</label> -->
+			<input type="text" name="username" id="username" placeholder="Username" required>
+
+			<!-- <label for="password">Password</label> -->
+			<input type="password" name="password" id="password" placeholder="Password" required>
+
+			<button type="submit">Sign In</button>
+		</form>
+	</section>
+	<section class="container content-info new-user-signup">
+		<p>New User? <a href="../signUp/signup.html">Sign up</a></p>
+	</section>
+
+</section>
+</main>
+
+
+<script type="text/javascript" src="./signin.js"></script>
+</body>
+</html>

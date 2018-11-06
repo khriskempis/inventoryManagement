@@ -18,10 +18,8 @@ router.post('/', jsonParser, (req,res) => {
 		description: req.body.description,
 		qty: req.body.qty,
 		cost: req.body.cost,
-		price: {
-			regular: req.body.price.regular,
-			sale: req.body.price.sale
-		},
+		price: req.body.price,
+		sale: req.body.sale,
 		category: req.body.category,
 		status: req.body.status,
 		image_url: {url: req.body.image_url.url}

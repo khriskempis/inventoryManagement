@@ -1,5 +1,5 @@
-// const INVENTORY_ENDPOINT = "http://localhost:8080/items/";
-const INVENTORY_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/items/"
+const INVENTORY_ENDPOINT = "http://localhost:8080/items/";
+// const INVENTORY_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/items/"
 let token = localStorage.getItem("token");
 let deleteItemId;
 
@@ -44,8 +44,8 @@ function generateItemHtml(item, index) {
 	return `<tr>
 						<th>${item.name}</th>
 						<td>${item.cost}</td>
-						<td>$${item.price.regular}</td>
-						<td>$${item.price.sale}</td>
+						<td>$${item.price}</td>
+						<td>$${item.sale}</td>
 						<td>${item.qty}</td>
 						<td>La Habra</td>
 						<td>${item.status}</td>
@@ -90,6 +90,13 @@ function renderItemsHtml(){
 
 // Click Events
 
+function handleAddItemButton() {
+
+	$('.js-add-button').on('click', function(event){
+		$('.pop-up-add-item').removeClass('hidden');
+	});
+};
+
 function handleViewButton() {
 	const viewButton = $('.inventory-display').find('.js-table-data');
 	viewButton.on("click", ".js-view-button", function(event){
@@ -98,7 +105,7 @@ function handleViewButton() {
 		localStorage.setItem("itemId", `${itemId}`)
 		window.location.href = "../itemDisplay/index.html"; 
 	});
-}
+};
 
 function handleDeleteButton() {
 	const deleteButton = $('.inventory-display').find('.js-table-data');
@@ -128,8 +135,6 @@ function handleCancelDeleteButton() {
 	});
 };
 
-
-
 function handleSignOut(){
 	$('.js-sign-out').click(function(){
 		localStorage.removeItem("token");
@@ -137,6 +142,7 @@ function handleSignOut(){
 };
 
 function init(){
+	$(handleAddItemButton());
 	$(handleCancelDeleteButton());
 	$(handleConfirmDeleteButton());
 	$(handleDeleteButton());
