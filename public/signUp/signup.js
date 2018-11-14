@@ -1,5 +1,5 @@
-const USERS_ENDPOINT = 'http://localhost:8080/users';
-// const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/users/"
+// const USERS_ENDPOINT = 'http://localhost:8080/users';
+const USERS_ENDPOINT = "https://obscure-springs-35933.herokuapp.com/users/"
 
 function createUser(newUser, callbackFn){
 	$.ajax({
@@ -19,7 +19,7 @@ function createUser(newUser, callbackFn){
 };
 
 function redirectToMain(){
-		window.location.href = "../index.html"
+		window.location.href = "../signin/signin.html"
 }
 
 function errorMessage(res){
