@@ -19,7 +19,7 @@ function createUser(newUser, callbackFn){
 };
 
 function redirectToMain(){
-		window.location.href = "../signin/signin.html"
+		window.location.href = "../signIn/signIn.html"
 }
 
 function errorMessage(res){
