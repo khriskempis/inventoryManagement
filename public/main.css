@@ -316,7 +316,11 @@ form {
 
 .sign-in-welcome-message,
 .welcome-message {
-  background-image: linear-gradient(-180deg, #6E95FF 0%, #1E387E 93%);
+  background-color: var(--blue-bg-color);
+}
+
+.sign-in-welcome-message h2 {
+  margin-bottom: 1rem;
 }
 
 .sign-in-welcome-message {
@@ -458,6 +462,7 @@ background-color: var(--success-color)
   position: absolute; 
   top: 9rem;
   box-shadow: 2px 2px 15px;
+  border-radius: 1%;
 }
 
 .add-item-header {
@@ -583,7 +588,6 @@ table {
 table {
   table-layout: fixed;
   border-collapse: collapse;
-  border: 1px solid grey;
   border-radius: 0.28571429rem; 
   background-color: var(--med-blue-bg-color)
 }
@@ -785,7 +789,7 @@ div.hidden {
 
 	.new-user-info {
 		width: 50%;
-		margin-top: 8rem;
+		margin: 8rem 0 0 1rem;
 		padding: 5rem 4rem;
 	}
 
