@@ -43,7 +43,7 @@ A form will pop up and will display a dropdown menu of the fields in which you c
 Clicking the add button will include the field and value in the changes to be updated section.
 Once you are sure of the changes to be made, click the update fields button above the form and your changes will be immediately displayed.
 
-![](./public/source-files/img/item-display.jpg)
+![](./public/source-files/img/item-display.png)
 
 ----
 
