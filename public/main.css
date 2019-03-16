@@ -473,7 +473,7 @@ background-color: var(--success-color)
   position: absolute; 
   top: 9rem;
   box-shadow: 2px 2px 15px;
-  border-radius: 1%;
+  border-radius: 10px;
 }
 
 .add-item-header {
@@ -610,7 +610,7 @@ thead th:nth-child(3) {
 
 thead th:nth-child(2),
 thead th:nth-child(4),
-thead th:nth-child(5),  {
+thead th:nth-child(5) {
   width: 5%;
 }
 
