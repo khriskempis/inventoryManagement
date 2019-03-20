@@ -51,8 +51,8 @@
     }
 
     @include respond-to(large-screens){
-      font-size: 4rem;
       margin-top: 10rem;
+      font-size: 4rem;
     }
   }
 
