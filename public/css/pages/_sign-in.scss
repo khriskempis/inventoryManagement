@@ -1,0 +1,121 @@
+.sign-in-welcome-message,
+.welcome-message {
+  background-color: var(--blue-bg-color);
+}
+
+.sign-in-welcome-message h2 {
+  margin-bottom: 1rem;
+}
+
+.sign-in-welcome-message {
+  color: white;
+  text-align: center;
+  line-height: 1.5rem;
+  padding: 3rem;
+  margin-top: 1rem;
+}
+
+.js-sign-up,
+.js-sign-in {
+  display: flex;
+  flex-wrap: wrap; 
+  width: 100%;
+
+}
+
+.sign-in input,
+.sign-in button,
+.sign-in,
+.sign-up input,
+.sign-up button,
+.sign-up {
+  border-radius: 0.28571429rem;
+}
+
+.sign-up,
+.sign-in {
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid var(--med-blue-bg-color);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.sign-in,
+.sign-up {
+	width: 85%;
+}
+
+.sign-in, 
+.new-user-signup,
+.sign-up {
+  background-color: var(--med-blue-bg-color)
+}
+
+.sign-up {
+  margin-top: 1remd;
+}
+
+.sign-up input,
+.sign-up button,
+.sign-in input,
+.sign-in button {
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.sign-up form,
+.sign-in form {
+  text-align: center;
+}
+
+.sign-up button,
+.sign-in button {
+color: var(--off-white-bg-color);
+letter-spacing: 1px; 
+font-weight: bold;
+background-color: var(--success-color)
+}
+
+.new-user-signup {
+  border: 1px solid var(--med-blue-bg-color);
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 85%;
+}
+
+.new-user-signup {
+  color: var(--dark-blue-bg-color);
+}
+
+.new-user-signup a {
+  color: var(--blue-bg-color);
+}
+
+.sign-up label,
+.sign-in label {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+#demo-account {
+  width: 3%;
+  height: 8%;
+  display: inline-block;
+  margin-left: 2%;
+}
+
+.demo-account-label {
+  padding-top: 1.3%;
+}
+
+@media only screen and (min-width: 640px){
+  .sign-in-welcome-message {
+    margin: 4rem auto; 
+		width: 50%;
+		padding: 2rem;
+	}
+}

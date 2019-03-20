@@ -1,0 +1,24 @@
+$blue-bg-color: #3f72af;
+$off-white-bg-color: #f9f7f7;
+$dark-blue-bg-color: #384259;
+$med-blue-bg-color: #dbe2ef;
+$danger-color: #e84545;
+$success-color: #28B431;
+$grey-color: #636363;
+$button-color: linear-gradient(-180deg, #6E95FF 0%, #1E387E 93%);
+
+$break-small: 360px; 
+$break-medium: 640px;
+$break-large: 940px; 
+
+@mixin respond-to($media){
+  @if $media == handhelds {
+    @media only screen and (min-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-medium) { @content; }
+  }
+  @else if $media == large-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
