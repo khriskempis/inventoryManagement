@@ -21,24 +21,26 @@
 	</ul>
 </nav>
 
-<section class="pop-up-add-item hidden">
-		<div class="add-item-header">
-			<h3>Add New Item</h3>
-		</div>
-		<form role="form" class="js-add-item">
+<section>
+		
+		<form role="form" class="js-add-item pop-up-add-item hidden">
+				<div class="add-item-header">
+						<h3>Add New Item</h3>
+					</div>
+
 				<div class="form-text">
 					<label for="name">Name</label>
 					<input type="text" name="name" id="name" required>
 		
 					<label for="description">Description</label>
-					<textarea cols="18" rows="3" id="description"></textarea>
+					<textarea cols="20" rows="3" id="description"></textarea>
 				
 					<label for="category">Category</label>
 					<input type="text" name="category" id="category">
 					</select>
 		
 					<label for="status">Status</label>
-					<select type="text" name="status" id="status" required>
+					<select type="text" name="status" id="status" class="form-input" required>
 						<option>in stock</option>
 						<option>out of stock</option>
 					</select>
@@ -85,11 +87,11 @@
 		<button class="js-add-button">+ Add Item</button>
 	</div>
 
-	<div class="status-message invisible">
+	<div class="status-message hidden">
 
 	</div>
 
-	<div class="confirm-delete invisible">
+	<div class="confirm-delete hidden">
 		<button class="confirm-delete-button"></button>
 		<button class="cancel-delete-button">Cancel</button>
 	</div> 
