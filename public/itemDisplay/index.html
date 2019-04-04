@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width"/>
   <!-- <link rel="stylesheet" type="text/css" href="../float-grid.css"> -->
   <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="shortcut icon" type="image/ico" href="../imgs/favicon.ico">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
@@ -47,7 +48,7 @@
       <li>Click add and the updated field will included in the update.</li>
       <li>You can update all fields by just adding the information.</li>
       <li>Finally, click the update items button and your changes will be displayed.</li>
-  </ul>
+    </ul>
 
     <div class="update-button">
       <button class="js-update-item">Update Item</button>
@@ -56,30 +57,30 @@
 
     <div role="form" class="pop-up hidden">
       <div class="form-pop-up">
-      <form class="js-form-container" id="form-container">
-        <label for="field">Field</label>
-        <select id="field">
-          <option>Name</option>
-          <option>Description</option>
-          <option>Category</option>
-          <option>Status</option>
-          <option>Location</option>
-          <option>Qty</option>
-          <option>Cost</option>
-          <option>Price</option>
-          <option>Sale</option>
-        </select>
+        <form class="js-form-container" id="form-container">
+          <label for="field">Field</label>
+          <select id="field">
+            <option>Name</option>
+            <option>Description</option>
+            <option>Category</option>
+            <option>Status</option>
+            <option>Location</option>
+            <option>Qty</option>
+            <option>Cost</option>
+            <option>Price</option>
+            <option>Sale</option>
+          </select>
 
-        <label for="updated-value">Value</label>
-        <input type="text" name="updated-value" id="updated-value">
+          <label for="updated-value">Value</label>
+          <input type="text" name="updated-value" id="updated-value">
 
-        <button class="js-add-updated-item">+ Add</button>
-      </form>
-      <div class="updated-items">
-        <h5>Fields to be Updated</h5>
-              <!-- new items to be updated -->
+          <button class="js-add-updated-item">+ Add</button>
+        </form>
+        <div class="updated-items">
+          <h5>Fields to be Updated</h5>
+                <!-- new items to be updated -->
+        </div>
       </div>
-    </div>
     </div>
 
   </section>
