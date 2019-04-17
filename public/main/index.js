@@ -69,12 +69,12 @@ function generateAndDisplayArrayOfItems(data){
 };
 
 function removeStatusMessage(){
-	$('.status-message').addClass("invisible");
-	$('.confirm-delete').addClass("invisible");
+	$('.status-message').addClass("hidden");
+	$('.confirm-delete').addClass("hidden");
 }
 
 function renderConfirmDelete(itemName){
-	$('.confirm-delete').removeClass('invisible');
+	$('.confirm-delete').removeClass('hidden');
 	$('.confirm-delete-button').text(`Delete ${itemName} item?`)
 }
 
@@ -122,7 +122,7 @@ function handleDeleteButton() {
 function handleConfirmDeleteButton() {
 	const confirmDeleteButton = $('.confirm-delete').find('.confirm-delete-button');
 	confirmDeleteButton.click(function(event){
-		$('.status-message').removeClass("invisible");
+		$('.status-message').removeClass("hidden");
 		deleteItem(deleteItemId);
 		setTimeout(function(){removeStatusMessage()}, 4000)
 	});

@@ -1,0 +1,202 @@
+/* === ITEM DISPLAY PAGE === */
+
+.item-display-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item-display {
+  display: block; 
+  justify-content: space-around;
+}
+
+.item-display img {
+  width: 100%;
+}
+
+.item-display table {
+  table-layout: unset;
+  border: none;
+}
+
+.item-display h5 {
+  color: var(--grey-color);
+}
+
+#item-description {
+  font-size: 1rem;
+}
+
+.price-display {
+  display: flex; 
+  justify-content: space-around;
+}
+
+.photo-image {
+	width: 23rem;
+}
+
+.price-display h5 {
+  display: inline-block;
+  margin-top: 1rem;
+}
+.price-display p {
+  font-size: 1.3rem;
+}
+
+.message-board {
+  margin-top: 1rem;
+  width: 30%;
+  flex-grow: 3;
+}
+
+.message-board li {
+  list-style: inside;
+  font-size: 0.8rem;
+}
+
+.update-button {
+  margin: 2rem auto; 
+}
+
+.js-update-item {
+  margin: auto; 
+  padding: 0.5rem;
+  width: 30%;
+  background-color: var(--blue-bg-color);
+  color: var(--off-white-bg-color);
+}
+
+/* === FORM POP UP === */
+
+div.hidden {
+  display: none;
+}
+
+.hidden {
+  display: none; 
+}
+
+.form-pop-up {
+  display: flex;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #fff;
+  font-size: 0.9rem;
+}
+
+#form-container {
+  background-color: #fff;
+}
+
+.js-update-fields {
+  width: 40%;
+  background-color: var(--success-color);
+  padding: 0.5rem;
+  color: var(--off-white-bg-color);
+}
+
+.update-fields-cancel {
+  padding: 0.5rem;
+  width: 20%;
+}
+
+.js-add-updated-item {
+  margin-top: 0.4rem;
+  padding: 0.3rem; 
+  width: 100%;
+}
+
+.updated-items {
+  margin-left: 1rem; 
+}
+
+.updated-items h5 {
+  margin-bottom: 0.2rem; 
+}
+
+
+@media only screen and (min-width: 640px){
+
+  .logo {
+    font-size: 1.5rem;
+  }
+	
+	.content-info {
+	  display: flex;
+	  justify-content: space-between;
+	  flex-wrap: nowrap;
+	}
+
+	nav ul li {
+  	display: inline-block;
+  	margin: 0 1.5rem;
+ 		font-size: 1rem; 
+	}
+
+	.sign-in,
+	.sign-up {
+		width: 50%;
+	}
+
+	.sign-up {
+ 		margin-top: 8rem;
+	}
+
+
+	.new-user-signup {
+		width: 50%;
+	}
+
+	.new-user-info {
+		width: 50%;
+		margin: 8rem 0 0 1rem;
+		padding: 5rem 4rem;
+	}
+
+	.status-bar {
+		margin: 2rem 2.5rem;
+	}
+
+	.nav-links {
+		width: 13%;
+		margin-bottom: 0;
+		height: 100%;
+	}
+
+	.nav-links ul {
+		display: block;
+	}
+
+	.inventory-display {
+    margin-left: 1.5rem;
+    width: inherit;
+    overflow-x: auto;
+	}
+
+	.js-add-button {
+		padding: 1rem;
+  }
+  
+  table {
+    width: 100%;
+  }
+
+  .edit-buttons {
+    display: flex;
+  }
+
+  .js-view-button{
+    width: 100%;
+  }
+
+  .price-display {
+    width: 40%;
+  }
+  .item-display {
+    display: flex; 
+    justify-content: space-between;
+    width: 55%;
+    margin: 0 1rem;
+  }
+}

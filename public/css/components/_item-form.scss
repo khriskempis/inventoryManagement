@@ -1,0 +1,91 @@
+.pop-up-add-item {
+  position: absolute; 
+  top: 9rem;
+  right: 0;
+  left: 0;
+  box-shadow: 2px 2px 5px;
+  border-radius: 2px;
+  max-width: 450px;
+
+  display: flex; 
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto; 
+  background-color: #dbe2ef;
+  padding: 1rem;
+
+  select {
+    background-color: $off-white-bg-color;
+  }
+
+  #status {
+    width: 50%;
+  }
+
+  #description {
+    width: 50%;
+  }
+  
+}
+
+.add-item-header {
+  border-bottom: 1px solid white;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-numbers, 
+.form-text {
+  width: 50%;
+}
+
+.form-text {
+  input, textarea, select {
+    margin: 0.5rem;
+    display: block;
+  }
+}
+
+.form-numbers {
+  display: flex; 
+  flex-wrap: wrap;
+}
+
+.form-label {
+  width: 30%; 
+
+  @include respond-to(handhelds){
+    width: 50%;
+  }
+}
+
+.form-input {
+  width: 30%;
+  height: 1.3rem; 
+  margin-left: 2rem;
+  font-size: 0.8rem;
+
+  @include respond-to(handhelds){
+    margin-left: 0;
+  }
+}
+
+.add-item-buttons .button {
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  background-color: $button-color;
+  color: white;
+}
+
+@media only screen and (min-width: 640px){
+
+  .form-text {
+    width: 60%;
+  }
+  .form-numbers {
+    width: 40%; 
+  }
+
+}
+

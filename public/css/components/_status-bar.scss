@@ -1,0 +1,62 @@
+// .js-add-button {
+//   color: white;
+//   padding: 0.5rem;
+//   font-size: 1rem;
+//   border: 1px solid grey;
+//   background-image: $button-color;
+// }
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+
+  button {
+    color: white;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid grey;
+    background-color: $button-color;
+  }
+}
+
+.status-message {
+  padding: 1rem;
+  background-color: $success-color;
+  border: 1px solid $success-color;
+  color: $off-white-bg-color;
+}
+
+.confirm-delete {
+  width: 30%;
+}
+
+.confirm-delete-button,
+.cancel-delete-button {
+  padding: 0.3rem;
+}
+
+.confirm-delete-button {
+  background-color: $danger-color;
+  width: 70%;
+  padding: 0.5rem;
+  font-size: 0.9rem; 
+  color: $off-white-bg-color;
+}
+
+.cancel-delete-button {
+  width: 27%;
+  background-color: #efefee
+}
+
+.js-inventory-button {
+  padding: 0.4rem; 
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}

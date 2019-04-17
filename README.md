@@ -1,7 +1,7 @@
 
 ## Inventory Management Tool
 
-[Inventory Management Tool](https://obscure-springs-35933.herokuapp.com/)
+[Visit Site](https://obscure-springs-35933.herokuapp.com/)
 
 #### Description
 

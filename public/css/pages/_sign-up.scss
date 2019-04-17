@@ -1,0 +1,27 @@
+.welcome-message,
+.new-user-info {
+  color: var(--med-blue-bg-color);
+  width: 85%;
+  background-color: var(--blue-bg-color);
+  border: 1px solid var(--blue-bg-color);
+  text-align: center;
+  line-height: 1.5rem;
+  padding: 1rem 1rem;
+  margin-top: 1rem;
+}
+
+.welcome-message {
+  margin-top: 4rem;
+  width: 85%;
+  padding: 2rem;
+}
+
+.name-section {
+  display: flex;
+  width: 100%;
+}
+
+.name-section input {
+  display: block;
+  width: 50%;
+}

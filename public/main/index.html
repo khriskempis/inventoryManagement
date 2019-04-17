@@ -3,9 +3,10 @@
 <head>
 	<title>Champion Comics and Toys</title>
 	<meta name="viewport" content="width=device-width"/>
-	<link rel="stylesheet" type="text/css" href="../float-grid.css">
-	<link rel="stylesheet" type="text/css" href="../main.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../float-grid.css"> -->
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<link href="../source-files/open-iconic.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/ico" href="../imgs/favicon.ico">
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -21,37 +22,26 @@
 	</ul>
 </nav>
 
-<section class="pop-up-add-item hidden">
-		<div class="add-item-header">
-			<h3>Add New Item</h3>
-		</div>
-		<form role="form" class="js-add-item">
+<section>
+		
+		<form role="form" class="js-add-item pop-up-add-item hidden">
+				<div class="add-item-header">
+						<h3>Add New Item</h3>
+					</div>
+
 				<div class="form-text">
 					<label for="name">Name</label>
 					<input type="text" name="name" id="name" required>
 		
 					<label for="description">Description</label>
-					<textarea cols="18" rows="3" id="description"></textarea>
+					<textarea cols="20" rows="3" id="description"></textarea>
 				
 					<label for="category">Category</label>
 					<input type="text" name="category" id="category">
-					<!-- <select id="category">
-						<option>Action Figure</option>
-						<option>Legos</option>
-						<option>Funko Pop</option>
-						<option>Poster</option>
-						<option>Print</option>
-						<option>Statue</option>
-						<option>Spinner</option>
-						<option>Kids Toys</option>
-						<option>Sticker</option>
-						<option>Comics</option>
-						<option>Collectible</option>
-						<option>Hot Wheels</option> -->
 					</select>
 		
 					<label for="status">Status</label>
-					<select type="text" name="status" id="status" required>
+					<select type="text" name="status" id="status" class="form-input" required>
 						<option>in stock</option>
 						<option>out of stock</option>
 					</select>
@@ -97,28 +87,18 @@
 	<div>
 		<button class="js-add-button">+ Add Item</button>
 	</div>
-<!-- 
-	<div>
-		<a href="../items/item-form.html" type="button" class="js-add-button">+ Add Item</a>
-	</div> -->
 
-	<div class="status-message invisible">
+	<div class="status-message hidden">
 
 	</div>
 
-	<div class="confirm-delete invisible">
-		<!-- <p class="js-delete-message"> </p> -->
+	<div class="confirm-delete hidden">
 		<button class="confirm-delete-button"></button>
 		<button class="cancel-delete-button">Cancel</button>
 	</div> 
 </section>
 
 <section role="contentinfo" class="content-info container">
-	<!-- <nav role="navigaton" class="nav-links col-3">
-		<ul>
-			<li><a href="index.html">Inventory</a></li>
-		</ul>
-	</nav> -->
 
 	<section role="contentinfo" class="inventory-display">
 		<table>
@@ -141,80 +121,6 @@
 	</section>
 
 </section>
-
-<!-- <section class="pop-up-add-item">
-		<div class="add-item-form">
-			<h3>Add New Item</h3>
-		</div>
-		<form role="form" class="js-add-item">
-				<div class="form-text">
-					<label for="name">Name</label>
-					<input type="text" name="name" id="name" required>
-		
-					<label for="description">Description</label>
-					<textarea cols="18" rows="3" id="description"></textarea>
-				
-					<label for="category">Category</label>
-					<select id="category">
-						<option>Action Figure</option>
-						<option>Legos</option>
-						<option>Funko Pop</option>
-						<option>Poster</option>
-						<option>Print</option>
-						<option>Statue</option>
-						<option>Spinner</option>
-						<option>Kids Toys</option>
-						<option>Sticker</option>
-						<option>Comics</option>
-						<option>Collectible</option>
-						<option>Hot Wheels</option>
-					</select>
-		
-					<label for="status">Status</label>
-					<select type="text" name="status" id="status" required>
-						<option>in stock</option>
-						<option>out of stock</option>
-					</select>
-				</div>
-		
-				<div class="form-numbers">
-					<label for="quantity" class="form-label">Quantity</label>
-					<select id="quantity" class="form-input">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-					</select>
-		
-					<label for="cost" class="form-label">Cost</label>
-					<input type="number" name="cost" id="cost" class="form-input" required>
-		
-					<label for="price" class="form-label">Price</label>
-					<input type="number" name="price" id="price" class="form-input" required>
-		
-					<label for="sale" class="form-label">Sale</label>
-					<input type="number" name="sale" id="sale" class="form-input">
-		
-					<label for="image" class="form-label">Image Url</label>
-					<input type="text" name="image" id="image" class="form-input">
-				</div>
-				<button type="submit" class="js-submit-button">Add Item</button>
-				<button class="js-form-cancel-button">Cancel</button>
-			</form>
-			
-
-</section> -->
-
-<!-- <div class="js-next-prev">
-	<button class="js-prev">< prev</button>
-	<button class="js-next">next ></button>
-</div> -->
 
 <script type="text/javascript" src="../items/item-form.js"></script>
 <script type="text/javascript" src="index.js"></script>
