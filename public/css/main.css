@@ -216,8 +216,7 @@ nav a {
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid grey;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6d92d3), color-stop(93%, #304989));
-  background-image: linear-gradient(-180deg, #6d92d3 0%, #304989 93%);
+  background-color: #3f72af;
 }
 
 .status-message {
@@ -266,9 +265,9 @@ nav a {
   top: 9rem;
   right: 0;
   left: 0;
-  -webkit-box-shadow: 2px 2px 15px;
-          box-shadow: 2px 2px 15px;
-  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 5px;
+          box-shadow: 2px 2px 5px;
+  border-radius: 2px;
   max-width: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -345,8 +344,7 @@ nav a {
 .add-item-buttons .button {
   padding: 0.5rem;
   margin: 0 0.5rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6d92d3), color-stop(93%, #304989));
-  background-image: linear-gradient(-180deg, #6d92d3 0%, #304989 93%);
+  background-color: #3f72af;
   color: white;
 }
 
@@ -448,8 +446,8 @@ nav a {
   color: white;
   border: none;
   border-radius: 2px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6d92d3), color-stop(93%, #304989));
-  background-image: linear-gradient(-180deg, #6d92d3 0%, #304989 93%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(98, 120, 177, 0.94)), color-stop(74%, rgba(51, 82, 167, 0.94)));
+  background-image: linear-gradient(-180deg, rgba(98, 120, 177, 0.94) 0%, rgba(51, 82, 167, 0.94) 74%);
   margin: 1rem auto;
 }
 
@@ -490,11 +488,12 @@ nav a {
   text-align: center;
   height: 10%;
   margin-bottom: 1rem;
+  padding-top: 0.5rem;
 }
 
 .register-form-header h3 {
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 0 1rem;
   padding-top: 0.3rem;
   letter-spacing: 2px;
 }
