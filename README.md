@@ -1,7 +1,7 @@
 
 ## Inventory Management Tool
 
-[Visit Site](https://obscure-springs-35933.herokuapp.com/)
+[Visit Site](http://www.championinventory.com)
 
 #### Description
 
